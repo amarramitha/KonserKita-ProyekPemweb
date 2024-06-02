@@ -175,60 +175,113 @@
         <div id="controls-carousel" class="relative" data-carousel="static">
             <!-- Carousel wrapper -->
             <div class="grid grid-cols-2 md:grid-cols-5 gap-1 relative pb-10">
-                <div>
+                <!-- Images -->
+                <div class="carousel-item">
                     <img class="max-w-full rounded-lg p-6" src="{{ asset('storage/images/tiara.png') }}"
-                        alt="">
+                        alt="Tiara">
                 </div>
-                <div>
+                <div class="carousel-item">
                     <img class="max-w-full rounded-lg p-6" src="{{ asset('storage/images/nadin.png') }}"
-                        alt="">
+                        alt="Nadin">
                 </div>
-                <div>
+                <div class="carousel-item">
                     <img class="max-w-full rounded-lg p-6" src="{{ asset('storage/images/ardhito.png') }}"
-                        alt="">
+                        alt="Ardhito">
                 </div>
-                <div>
+                <div class="carousel-item">
                     <img class="max-w-full rounded-lg p-6" src="{{ asset('storage/images/tulus.png') }}"
-                        alt="">
+                        alt="Tulus">
                 </div>
-                <div>
+                <div class="carousel-item">
                     <img class="max-w-full rounded-lg p-6" src="{{ asset('storage/images/mahalini.png') }}"
-                        alt="">
+                        alt="Mahalini">
                 </div>
-
-                <!-- Slider controls -->
-                <button type="button"
-                    class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-                    data-carousel-prev>
-                    <span
-                        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" d="M5 1 1 5l4 4" />
-                        </svg>
-                        <span class="sr-only">Previous</span>
-                    </span>
-                </button>
-                <button type="button"
-                    class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-                    data-carousel-next>
-                    <span
-                        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" d="m1 9 4-4-4-4" />
-                        </svg>
-                        <span class="sr-only">Next</span>
-                    </span>
-                </button>
+                <div class="carousel-item">
+                    <img class="max-w-full rounded-lg p-6" src="{{ asset('storage/images/tiara.png') }}"
+                        alt="Tiara">
+                </div>
+                <div class="carousel-item">
+                    <img class="max-w-full rounded-lg p-6" src="{{ asset('storage/images/nadin.png') }}"
+                        alt="Nadin">
+                </div>
+                <div class="carousel-item">
+                    <img class="max-w-full rounded-lg p-6" src="{{ asset('storage/images/ardhito.png') }}"
+                        alt="Ardhito">
+                </div>
+                <div class="carousel-item">
+                    <img class="max-w-full rounded-lg p-6" src="{{ asset('storage/images/tulus.png') }}"
+                        alt="Tulus">
+                </div>
+                <div class="carousel-item">
+                    <img class="max-w-full rounded-lg p-6" src="{{ asset('storage/images/mahalini.png') }}"
+                        alt="Mahalini">
+                </div>
             </div>
+
+            <!-- Slider controls -->
+            <button type="button"
+                class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                data-carousel-prev>
+                <span
+                    class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                    <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M5 1 1 5l4 4" />
+                    </svg>
+                    <span class="sr-only">Previous</span>
+                </span>
+            </button>
+            <button type="button"
+                class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                data-carousel-next>
+                <span
+                    class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                    <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m1 9 4-4-4-4" />
+                    </svg>
+                    <span class="sr-only">Next</span>
+                </span>
+            </button>
         </div>
     </div>
     <x-footer></x-footer>
 
 </body>
 
-
 </html>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const carousel = document.querySelector('#controls-carousel');
+        const items = carousel.querySelectorAll('.carousel-item');
+        let currentItem = 0;
+
+        function updateCarousel() {
+            items.forEach((item, index) => {
+                // Show 5 items at a time
+                if (index >= currentItem && index < currentItem + 5) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        const prevButton = carousel.querySelector('[data-carousel-prev]');
+        const nextButton = carousel.querySelector('[data-carousel-next]');
+
+        prevButton.addEventListener('click', function() {
+            currentItem = Math.max(0, currentItem - 1);
+            updateCarousel();
+        });
+
+        nextButton.addEventListener('click', function() {
+            currentItem = Math.min(items.length - 5, currentItem + 1);
+            updateCarousel();
+        });
+
+        updateCarousel(); // Initialize the carousel display
+    });
+</script>
