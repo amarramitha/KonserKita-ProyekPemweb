@@ -85,3 +85,7 @@ Route::get('/pembayaran', function () {
 Route::get('/editprofil', function () {
     return view('editprofil');
 });
+
+Route::get('/lainnya', function () {
+    return view('lainnya');
+});
