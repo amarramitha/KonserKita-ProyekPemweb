@@ -1,6 +1,6 @@
 <x-header></x-header>
 
-<body class="bg-brand-ungu min-h-screen font-mono flex justify-center items-center relative">
+<body class="bg-brand-ungu min-h-screen font-sans flex justify-center items-center relative">
 
     <div class="relative w-full max-w-4xl">
         <img class="rounded-lg w-full" src="{{ asset('storage/images/register.png') }}" alt="image description">

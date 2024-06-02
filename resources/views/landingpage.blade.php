@@ -1,6 +1,6 @@
 <x-header></x-header>
 
-<body class="h-auto font-mono">
+<body class="h-auto font-sans">
     <x-navguest></x-navguest>
 
 

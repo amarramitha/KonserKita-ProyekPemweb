@@ -1,7 +1,7 @@
 <x-header></x-header>
 <x-navbar></x-navbar>
 
-<body class="min-h-screen font-mono flex flex-col justify-center items-center bg-brand-blue">
+<body class="min-h-screen font-sans flex flex-col justify-center items-center bg-brand-blue">
     <div
         class=" w-full max-w-screen-sm mx-auto items-center p-4 my-20 bg-brand-desk border border-brand-desk rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
         <form class="space-y-6" action="#">

@@ -1,6 +1,6 @@
 <x-header></x-header>
 
-<body class="bg-brand-blue h-auto w-full font-mono justify-center items-center">
+<body class="bg-brand-blue h-auto w-full font-sans justify-center items-center">
     <x-navbar></x-navbar>
     <div class="w-full mx-auto p-6 mb-5 bg-transparent rounded-xl shadow md:w-3/4">
         <div class="flex justify-between items-center mb-2">
