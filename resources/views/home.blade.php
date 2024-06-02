@@ -155,7 +155,7 @@
                 </div>
             </div>
             <div class="flex justify-center mt-8">
-                <a href="#"
+                <a href="/lainnya"
                     class="inline-flex items-center px-5 py-3 text-sm font-medium text-center text-white bg-transparent border border-white rounded-lg hover:bg-brand-purple focus:ring-4 focus:outline-none focus:ring-gray-900 dark:bg-brand-purple dark:hover:bg-brand-purple dark:focus:ring-brand-ungu">
                     Lainnya
                 </a>
