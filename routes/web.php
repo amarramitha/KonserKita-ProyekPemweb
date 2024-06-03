@@ -89,3 +89,43 @@ Route::get('/editprofil', function () {
 Route::get('/lainnya', function () {
     return view('lainnya');
 });
+
+Route::get('/admin', function () {
+    return view('admin');
+});
+
+Route::get('/authlogin', function () {
+    return view('authlogin');
+});
+
+Route::get('/authregister', function () {
+    return view('authregister');
+});
+
+Route::get('/icon-tabler', function () {
+    return view('icon-tabler');
+});
+
+Route::get('/sample-page', function () {
+    return view('sample-page');
+});
+
+Route::get('/ui-alert', function () {
+    return view('ui-alert');
+});
+
+Route::get('/ui-button', function () {
+    return view('ui-button');
+});
+
+Route::get('/ui-card', function () {
+    return view('ui-card');
+});
+
+Route::get('/ui-form', function () {
+    return view('ui-form');
+});
+
+Route::get('/ui-typography', function () {
+    return view('ui-typography');
+});
