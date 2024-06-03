@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('syaratketentuans', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('konser_id');
-            $table->foreign('konser_id')->references('id')->on('konsers')->onDelete('cascade');
             $table->text('syaratketentuan');
             $table->timestamps();
+            $table->foreign('konser_id')->references('id')->on('konsers')->onDelete('cascade');
         });
     }
 

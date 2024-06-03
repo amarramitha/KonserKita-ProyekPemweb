@@ -11,16 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('konsers', function (Blueprint $table) {
+        Schema::create('tickets', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('konser_id');
             $table->string('title');
-            $table->text('description');
-            $table->dateTime('date');
-            $table->string('lokasi');
-            $table->string('slug')->unique();
+            $table->integer('price');
+            $table->integer('kuota');
+            $table->enum('status', ['On Sale', 'Sold Out']);
             $table->timestamps();
-            $table->string('image');
+            $table->foreign('konser_id')->references('id')->on('konsers')->onDelete('cascade');
         });
+
     }
 
     /**
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('konsers');
+        Schema::dropIfExists('tikets');
     }
 };

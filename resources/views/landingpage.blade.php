@@ -32,15 +32,17 @@
             <!-- Carousel wrapper -->
             <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
                 <!-- Item 1 -->
-
+                @foreach ($konsers as $k )
+                    
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <a href="/bersuaproject">
+                    <a href="/{{ $k['slug'] }}">
                         <img src="{{ asset('storage/images/bersua.png') }}"
-                            class="absolute block w-fit h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                            alt="bersua">
+                        class="absolute block w-fit h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                        alt="bersua">
                     </a>
                 </div>
-
+                
+                @endforeach
                 <!-- Item 2 -->
 
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>

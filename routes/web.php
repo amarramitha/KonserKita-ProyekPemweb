@@ -1,13 +1,16 @@
 <?php
 
+
+use App\Models\Konser;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\KonserController;
 
 Route::get('/', function () {
-    return view('landingpage');
+    return view('landingpage', ['konsers' => Konser::all()]);
 });
 
 Route::get('/home', function () {
-    return view('home');
+    return view('home', ['konsers' => Konser::all()]);
 });
 
 Route::get('/login', function () {
@@ -46,9 +49,7 @@ Route::get('/metodebayar', function () {
     return view('metodebayar');
 });
 
-Route::get('/bersuaproject', function () {
-    return view('bersuaproject');
-});
+Route::get('/{konser:slug}', [KonserController::class, 'show']);
 
 Route::get('/bersuadesk', function () {
     return view('bersuadesk');
