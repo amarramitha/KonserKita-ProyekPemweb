@@ -1,6 +1,6 @@
 <x-header></x-header>
 
-<body class="bg-brand-blue w-full font-mono flex flex-col min-h-screen">
+<body class="bg-brand-blue w-full font-sans flex flex-col min-h-screen">
     <x-navbar></x-navbar>
     <main class="flex-grow flex flex-col items-center">
         <div class="w-full mx-auto p-6 mb-5 bg-transparent rounded-xl shadow md:w-3/4">

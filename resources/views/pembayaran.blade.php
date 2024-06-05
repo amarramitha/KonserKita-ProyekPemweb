@@ -1,6 +1,6 @@
 <x-header></x-header>
 
-<body class="bg-brand-blue font-mono">
+<body class="bg-brand-blue font-sans">
     <x-navbar></x-navbar>
 
     <!-- Detail Pembayaran -->

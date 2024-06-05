@@ -1,7 +1,12 @@
 <x-header></x-header>
 
+<<<<<<< HEAD
 <body class="bg-brand-login min-h-screen font-mono flex justify-center items-center relative">
     
+=======
+<body class="bg-brand-login min-h-screen font-sans flex justify-center items-center relative">
+
+>>>>>>> 7fb0d42b3a8a635cc2bcfce2e932e4d051aa64fe
     <div class="relative w-full max-w-4xl">
         <img class="rounded-lg w-full" src="{{ asset('storage/images/login.png') }}" alt="image description">
         <div class="absolute inset-0 flex justify-center items-center">
