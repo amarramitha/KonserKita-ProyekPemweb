@@ -5,7 +5,7 @@
     <main class="flex-grow flex flex-col items-center">
         <div class="w-full mx-auto p-6 mb-5 bg-transparent rounded-xl shadow md:w-3/4">
             <div class="flex justify-between items-center mb-2">
-                <h2 class="text-2xl font-bold text-white dark:text-white md:text-4xl">Tiket Saya</h2>
+                <h2 class="text-2xl font-bold text-white md:text-4xl">Tiket Saya</h2>
             </div>
         </div>
         <div class="w-full h-auto mx-auto p-6 mb-10 bg-brand-desk rounded-xl shadow md:w-3/4">

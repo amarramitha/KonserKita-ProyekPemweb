@@ -1,22 +1,26 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
+use App\Models\Konser;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\KonserController;
+use App\Http\Controllers\RegisterController;
 
 Route::get('/', function () {
-    return view('landingpage');
+    return view('landingpage', ['konsers' => Konser::all()]);
 });
 
-Route::get('/home', function () {
-    return view('home');
-});
 
-Route::get('/login', function () {
-    return view('login');
-});
+Route::get('/dashboard', [DashboardController::class, 'index']);
 
-Route::get('/register', function () {
-    return view('register');
-});
+Route::get('/login', [LoginController::class, 'index'])->middleware('guest');
+
+Route::post('/login', [LoginController::class, 'authenticate']);
+
+Route::get('/register', [RegisterController::class, 'index']);
+
+Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/bigufestival', function () {
     return view('bigufestival');
@@ -46,9 +50,7 @@ Route::get('/metodebayar', function () {
     return view('metodebayar');
 });
 
-Route::get('/bersuaproject', function () {
-    return view('bersuaproject');
-});
+Route::get('/{konser:slug}', [KonserController::class, 'show']);
 
 Route::get('/bersuadesk', function () {
     return view('bersuadesk');

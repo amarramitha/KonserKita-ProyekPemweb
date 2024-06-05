@@ -2,12 +2,12 @@
     <h1 class="text-2xl font-extrabold ml-5 leading-none md:text-3xl lg:text-4xl">Bigu Festival</h1>
 </div>
 <div
-    class="relative flex flex-col max-w-screen-xl max-h-svh items-center bg-brand-blue shadow md:flex-row dark:border-gray-700 dark:bg-gray-800">
+    class="relative flex flex-col max-w-screen-xl max-h-svh items-center bg-brand-blue shadow md:flex-row">
     <img class="object-cover py-5 px-10 w-auto h-64 md:h-auto md:w-3/4 rounded-t-lg md:rounded-none md:rounded-s-lg"
         src="{{ asset('storage/images/bigu.png') }}" alt="">
 
     <div class="flex flex-col justify-between p-4 leading-normal w-full md:w-1/4">
-        <h5 class="mb-5 text-2xl font-bold text-white dark:text-white">Detail Konser</h5>
+        <h5 class="mb-5 text-2xl font-bold text-white">Detail Konser</h5>
         <ul class="icon-text items-center">
             <li>
                 <div class="mb-3 flex space-x-2">
@@ -49,19 +49,19 @@
 <div class="inline-flex items-center justify-between mt-3 mb-8 px-10">
     <a href="/bigudesk" aria-current="page"
         class="{{ request()->is('bigudesk') ? 'bg-gray-100 text-black' : 'text-white bg-brand-desk  hover:bg-gray-100 hover:text-black ' }} 
-        px-10 py-2 text-sm font-medium border border-gray-200 rounded-s-lg hover:bg-gray-100 hover:text-black focus:z-10 focus:ring-2 focus:ring-white focus:text-black dark:bg-white dark:border-gray-700 dark:text-white dark:hover:text-black dark:hover:bg-white dark:focus:ring-blue-500 dark:focus:text-black">
+        px-10 py-2 text-sm font-medium border border-gray-200 rounded-s-lg hover:bg-gray-100 hover:text-black focus:z-10 focus:ring-2 focus:ring-white focus:text-black">
         Deskripsi
     </a>
     <a href="/bigutiket"
-        class="{{ request()->is('bigutiket') ? 'bg-gray-100 text-black' : 'text-white bg-brand-desk  hover:bg-gray-100 hover:text-black ' }} border px-10 py-2 text-sm font-medium border-gray-200 focus:z-10 focus:ring-2 focus:ring-white focus:text-black dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-black dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-black">
+        class="{{ request()->is('bigutiket') ? 'bg-gray-100 text-black' : 'text-white bg-brand-desk  hover:bg-gray-100 hover:text-black ' }} border px-10 py-2 text-sm font-medium border-gray-200 focus:z-10 focus:ring-2 focus:ring-white focus:text-black">
         Tiket
     </a>
     <a href="/bigusk"
-        class="{{ request()->is('bigusk') ? 'bg-gray-100 text-black' : 'text-white bg-brand-desk  hover:bg-gray-100 hover:text-black ' }} px-10 py-2 text-sm font-medium  border-t border-b border-gray-200 focus:z-10 focus:ring-2 focus:ring-white focus:text-black dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-black dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-black">
+        class="{{ request()->is('bigusk') ? 'bg-gray-100 text-black' : 'text-white bg-brand-desk  hover:bg-gray-100 hover:text-black ' }} px-10 py-2 text-sm font-medium  border-t border-b border-gray-200 focus:z-10 focus:ring-2 focus:ring-white focus:text-black">
         S&K
     </a>
     <a href="/bigutalent"
-        class="{{ request()->is('bigutalent') ? 'bg-gray-100 text-black' : 'text-white bg-brand-desk  hover:bg-gray-100 hover:text-black ' }} px-10 py-2 text-sm font-medium  border border-gray-200 rounded-e-lg focus:z-10 focus:ring-2 focus:ring-white focus:text-black dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-black">
+        class="{{ request()->is('bigutalent') ? 'bg-gray-100 text-black' : 'text-white bg-brand-desk  hover:bg-gray-100 hover:text-black ' }} px-10 py-2 text-sm font-medium  border border-gray-200 rounded-e-lg focus:z-10 focus:ring-2 focus:ring-white focus:text-black">
         Talent
     </a>
 </div>

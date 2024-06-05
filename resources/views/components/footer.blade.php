@@ -1,4 +1,4 @@
-<footer class="bg-brand-purple dark:bg-gray-900 relative w-full">
+<footer class="bg-brand-purple relative w-full">
     <div class="mx-auto w-full max-h-fit max-w-screen-xl p-4 py-6 lg:py-8">
         <div class="md:flex md:justify-between">
             <div class="mb-6 md:mb-0">
@@ -9,9 +9,9 @@
             </div>
             <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-2">
                 <div>
-                    <h2 class="mb-6 text-sm font-semibold text-white uppercase dark:text-white">Untuk Penyelenggaraan
+                    <h2 class="mb-6 text-sm font-semibold text-white uppercase">Untuk Penyelenggaraan
                     </h2>
-                    <ul class="text-white dark:text-gray-400 font-medium">
+                    <ul class="text-white font-medium">
                         <li class="mb-4">
                             <a href="#">Hubungi Kami di :</a>
                         </li>
@@ -50,8 +50,8 @@
                     </ul>
                 </div>
                 <div>
-                    <h2 class="mb-6 text-sm font-semibold text-white uppercase dark:text-white">Informasi</h2>
-                    <ul class="text-white dark:text-gray-400 font-medium">
+                    <h2 class="mb-6 text-sm font-semibold text-white uppercase">Informasi</h2>
+                    <ul class="text-white font-medium">
                         <li class="mb-4">
                             <a href="#" class="hover:underline">Tentang Kami</a>
                         </li>
@@ -62,7 +62,7 @@
                 </div>
             </div>
         </div>
-        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
         <span class="block text-sm text-white sm:text-center">© 2024 <a href="#"
                 class="hover:underline">KonserKita.</a> All Rights Reserved.</span>
     </div>

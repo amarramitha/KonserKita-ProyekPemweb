@@ -4,7 +4,7 @@
     <x-navbar></x-navbar>
     <div class="w-full mx-auto p-6 mb-5 bg-transparent rounded-xl shadow md:w-3/4">
         <div class="flex justify-between items-center mb-2">
-            <h2 class="text-2xl font-bold text-white dark:text-white md:text-4xl">Riwayat Transaksi</h2>
+            <h2 class="text-2xl font-bold text-white md:text-4xl">Riwayat Transaksi</h2>
         </div>
     </div>
 
@@ -39,7 +39,7 @@
             </div>
             <div class="mt-2 md:mt-0">
                 <a href="/detailtransaksi"
-                    class="block px-4 py-2 bg-brand-blue text-white rounded-xl text-center hover:bg-slate-900 dark:bg-slate-900">Detail</a>
+                    class="block px-4 py-2 bg-brand-blue text-white rounded-xl text-center hover:bg-slate-900">Detail</a>
             </div>
         </div>
     </div>
@@ -76,11 +76,11 @@
             </div>
             <div class="mt-2 md:mt-0 md:ml-4">
                 <a href=""
-                    class="block px-4 py-2 bg-brand-blue text-white rounded-xl text-center  hover:bg-slate-900 dark:bg-slate-900">Detail</a>
+                    class="block px-4 py-2 bg-brand-blue text-white rounded-xl text-center  hover:bg-slate-900">Detail</a>
             </div>
             <div class="mt-2 md:mt-0 md:ml-4">
                 <a href="/pembayaran"
-                    class="block px-4 py-2 bg-gray-300 text-brand-blue rounded-xl text-center hover:bg-white dark:bg-white">Bayar</a>
+                    class="block px-4 py-2 bg-gray-300 text-brand-blue rounded-xl text-center hover:bg-white">Bayar</a>
             </div>
         </div>
     </div>

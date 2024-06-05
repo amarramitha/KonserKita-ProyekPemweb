@@ -21,7 +21,7 @@
 
     <!--carousel-->
     <div
-        class="block w-full px-5 py-5 p-10 bg-brand-blue shadow dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+        class="block w-full px-5 py-5 p-10 bg-brand-blue shadow">
 
         <h5 class="mx-10 mt-5 mb-2 text-2xl font-bold tracking-tight text-white italic">Paling Banyak Dibeli!</h5>
         <p class="mx-10 font-normal text-white mb-8 text-base">Kumpulan konser yang paling banyak dibeli di
@@ -94,8 +94,8 @@
                 class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
                 data-carousel-prev>
                 <span
-                    class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                    <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+                    class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                    <svg class="w-4 h-4 text-white rtl:rotate-180" aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M5 1 1 5l4 4" />
@@ -107,8 +107,8 @@
                 class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
                 data-carousel-next>
                 <span
-                    class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                    <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+                    class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                    <svg class="w-4 h-4 text-white rtl:rotate-180" aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="m1 9 4-4-4-4" />
@@ -122,11 +122,11 @@
 
     <!--grid-->
     <div
-        class="relative w-full h-full bg-gray-900 border border-brand-blue shadow dark:bg-gray-800 dark:border-gray-700">
+        class="relative w-full h-full bg-gray-900 border border-brand-blue shadow">
         <img src="{{ asset('storage/images/2.jpg') }}"
             class="absolute inset-0 w-full h-full object-cover mix-blend-overlay brightness-50" alt="Background Image">
         <div class="relative p-10">
-            <h5 class="mb-2 text-2xl font-bold text-center tracking-tight text-white dark:text-white">Sebentar Lagi!
+            <h5 class="mb-2 text-2xl font-bold text-center tracking-tight text-white">Sebentar Lagi!
             </h5>
             <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
                 <div>
@@ -155,8 +155,13 @@
                 </div>
             </div>
             <div class="flex justify-center mt-8">
+<<<<<<< HEAD:resources/views/dashboard.blade.php
+                <a href="#"
+                    class="inline-flex items-center px-5 py-3 text-sm font-medium text-center text-white bg-transparent border border-white rounded-lg hover:bg-brand-purple focus:ring-4 focus:outline-none focus:ring-gray-900">
+=======
                 <a href="/lainnya"
                     class="inline-flex items-center px-5 py-3 text-sm font-medium text-center text-white bg-transparent border border-white rounded-lg hover:bg-brand-purple focus:ring-4 focus:outline-none focus:ring-gray-900 dark:bg-brand-purple dark:hover:bg-brand-purple dark:focus:ring-brand-ungu">
+>>>>>>> 7fb0d42b3a8a635cc2bcfce2e932e4d051aa64fe:resources/views/home.blade.php
                     Lainnya
                 </a>
             </div>
@@ -167,7 +172,7 @@
 
     <!--penyanyi-->
     <div
-        class="block w-full px-5 py-2 p-10 bg-brand-blue shadow dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+        class="block w-full px-5 py-2 p-10 bg-brand-blue shadow">
 
         <h5 class="mx-10 mt-5 mb-3 text-2xl font-bold tracking-tight text-white italic">Cari Penyanyi Favoritmu!</h5>
         <p class="mx-10 font-normal text-white mb-8 text-base">Ayo cari konser sesuai penyanyi favoritmu.</p>
@@ -216,6 +221,37 @@
                     <img class="max-w-full rounded-lg p-6" src="{{ asset('storage/images/mahalini.png') }}"
                         alt="Mahalini">
                 </div>
+<<<<<<< HEAD:resources/views/dashboard.blade.php
+
+                <!-- Slider controls -->
+                <button type="button"
+                    class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                    data-carousel-prev>
+                    <span
+                        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white rtl:rotate-180" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" d="M5 1 1 5l4 4" />
+                        </svg>
+                        <span class="sr-only">Previous</span>
+                    </span>
+                </button>
+                <button type="button"
+                    class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                    data-carousel-next>
+                    <span
+                        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white rtl:rotate-180" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" d="m1 9 4-4-4-4" />
+                        </svg>
+                        <span class="sr-only">Next</span>
+                    </span>
+                </button>
+=======
+>>>>>>> 7fb0d42b3a8a635cc2bcfce2e932e4d051aa64fe:resources/views/home.blade.php
             </div>
 
             <!-- Slider controls -->
