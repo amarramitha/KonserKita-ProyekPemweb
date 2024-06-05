@@ -1,8 +1,8 @@
+
 <x-header></x-header>
 
 <body class="h-auto font-mono">
     <x-navguest></x-navguest>
-
 
     <section class="bg-center bg-no-repeat
      w-full relative">

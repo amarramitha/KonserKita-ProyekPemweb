@@ -9,7 +9,7 @@
             <h5 class="text-white font-bold ml-5 text-3xl">Detail Konser</h5>
             <img class="py-5 px-10 w-full h-auto rounded-lg" src="{{ asset('storage/images/bigu.png') }}" alt="">
             <div class="leading-normal">
-                <h5 class="items-center mb-5 text-2xl font-bold text-white dark:text-white">Bigu Festival</h5>
+                <h5 class="items-center mb-5 text-2xl font-bold text-white">Bigu Festival</h5>
                 <ul class="icon-text items-center">
                     <li>
                         <div class="mb-3 flex space-x-2">
@@ -52,7 +52,7 @@
     <div class="flex justify-center py-5">
         <div class="p-6 bg-brand-desk rounded-xl shadow w-full md:w-1/2">
             <h5 class="text-white font-bold ml-5 mb-5 text-center leading-none text-3xl">Detail Pembayaran</h5>
-            <hr class="mb-2 border-gray-200 sm:mx-auto dark:border-gray-700" />
+            <hr class="mb-2 border-gray-200 sm:mx-auto" />
             <div class="w-full py-2 my-5 bg-brand-blue opacity-50 rounded-lg shadow">
                 <p class="text-brand-huruf text-center">Maaf, Pembayaran Anda sudah kedaluwarsa.</p>
             </div>
@@ -87,7 +87,7 @@
     <div class="flex justify-center py-5">
         <div class="p-6 bg-brand-desk rounded-xl shadow w-full md:w-1/2">
             <h5 class="text-white font-bold ml-5 mb-5 text-center leading-none text-3xl">Detail Tiket</h5>
-            <hr class="mb-2 border-gray-200 sm:mx-auto dark:border-gray-700" />
+            <hr class="mb-2 border-gray-200 sm:mx-auto" />
             <div class="w-full py-2 my-5">
                 <p class="text-brand-huruf text-xl font-semibold">Presale 2 Day 1 Pass tiket</p>
             </div>
@@ -102,7 +102,7 @@
     <div class="flex justify-center py-5">
         <div class="p-6 bg-brand-desk rounded-xl shadow w-full md:w-1/2">
             <h5 class="text-white font-bold ml-5 mb-5 text-center leading-none text-3xl">Detail Pembeli</h5>
-            <hr class="mb-2 border-gray-200 sm:mx-auto dark:border-gray-700" />
+            <hr class="mb-2 border-gray-200 sm:mx-auto" />
             <table class="text-white w-full">
                 <tr>
                     <td class="py-3 px-5 font-semibold text-xl">Nama Pembeli</td>

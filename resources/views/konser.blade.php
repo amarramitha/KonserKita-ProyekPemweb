@@ -1,3 +1,4 @@
+
 <x-header></x-header>
 
 <body class="bg-brand-blue h-auto w-full font-mono justify-center items-center">

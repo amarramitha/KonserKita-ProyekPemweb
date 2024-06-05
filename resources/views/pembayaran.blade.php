@@ -35,9 +35,9 @@
     <div class="flex justify-center py-5">
         <div class="p-6 bg-brand-desk rounded-xl shadow w-full md:w-1/2">
             <h5 class="text-white font-bold ml-5 mb-5 text-center leading-none text-2xl">Cara Pembayaran</h5>
-            <hr class="mb-2 border-gray-200 sm:mx-auto dark:border-gray-700" />
+            <hr class="mb-2 border-gray-200 sm:mx-auto" />
             <h5 class="text-white font-semibold ml-5 my-5 leading-none text-xl">ATM BNI</h5>
-            <hr class="mb-2 border-gray-200 sm:mx-auto dark:border-gray-700" />
+            <hr class="mb-2 border-gray-200 sm:mx-auto" />
             <h5 class="text-white font-semibold ml-5 my-5 leading-none text-xl">Mobile Banking BNI</h5>
             <ul class="ml-5 my-5 text-sm text-white">
                 <li class="block px-4 py-2">1. Masukkan ID Pengguna dan kata sandi Anda.
