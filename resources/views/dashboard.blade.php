@@ -2,10 +2,7 @@
 
 <body class="h-auto font-sans">
     <x-navbar></x-navbar>
-
-
-    <section class="bg-center bg-no-repeat
-     w-full relative">
+    <section class="bg-center bg-no-repeat w-full relative">
         <img src="{{ asset('storage/images/1.jpg') }}"
             class="w-full h-full object-cover absolute top-0 left-0 mix-blend-overlay brightness-50" alt="Example Image">
         <div class="relative z-10 flex flex-col px-8 mx-auto max-w-screen-xl py-24 lg:py-56">
@@ -18,7 +15,6 @@
             </h2>
         </div>
     </section>
-
     <!--carousel-->
     <div
         class="block w-full px-5 py-5 p-10 bg-brand-blue shadow">
@@ -32,14 +28,15 @@
             <!-- Carousel wrapper -->
             <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
                 <!-- Item 1 -->
-
+                @foreach ($konsers as $k )
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <a href="/bersuaproject">
+                    <a href="/{{ $k['slug'] }}">
                         <img src="{{ asset('storage/images/bersua.png') }}"
                             class="absolute block w-fit h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                             alt="bersua">
                     </a>
                 </div>
+                @endforeach
 
                 <!-- Item 2 -->
 
@@ -155,13 +152,10 @@
                 </div>
             </div>
             <div class="flex justify-center mt-8">
-<<<<<<< HEAD:resources/views/dashboard.blade.php
                 <a href="#"
                     class="inline-flex items-center px-5 py-3 text-sm font-medium text-center text-white bg-transparent border border-white rounded-lg hover:bg-brand-purple focus:ring-4 focus:outline-none focus:ring-gray-900">
-=======
                 <a href="/lainnya"
                     class="inline-flex items-center px-5 py-3 text-sm font-medium text-center text-white bg-transparent border border-white rounded-lg hover:bg-brand-purple focus:ring-4 focus:outline-none focus:ring-gray-900 dark:bg-brand-purple dark:hover:bg-brand-purple dark:focus:ring-brand-ungu">
->>>>>>> 7fb0d42b3a8a635cc2bcfce2e932e4d051aa64fe:resources/views/home.blade.php
                     Lainnya
                 </a>
             </div>
@@ -221,7 +215,6 @@
                     <img class="max-w-full rounded-lg p-6" src="{{ asset('storage/images/mahalini.png') }}"
                         alt="Mahalini">
                 </div>
-<<<<<<< HEAD:resources/views/dashboard.blade.php
 
                 <!-- Slider controls -->
                 <button type="button"
@@ -250,8 +243,6 @@
                         <span class="sr-only">Next</span>
                     </span>
                 </button>
-=======
->>>>>>> 7fb0d42b3a8a635cc2bcfce2e932e4d051aa64fe:resources/views/home.blade.php
             </div>
 
             <!-- Slider controls -->
