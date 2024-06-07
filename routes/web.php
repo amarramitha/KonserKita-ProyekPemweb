@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminKonserController;
 use App\Http\Controllers\DashboardController;
 use App\Models\Konser;
 use Illuminate\Support\Facades\Route;
@@ -8,19 +10,21 @@ use App\Http\Controllers\KonserController;
 use App\Http\Controllers\RegisterController;
 
 Route::get('/', function () {
-    return view('landingpage', ['konsers' => Konser::all()]);
+    return view('dashboard', ['konsers' => Konser::all()]);
 });
 
+Route::get('/admin/dashboard', [AdminController::class,'index']);
 
-Route::get('/dashboard', [DashboardController::class, 'index']);
+Route::resource('/admin/dashboard/konsers', AdminKonserController::class)->middleware('auth');
 
-Route::get('/login', [LoginController::class, 'index'])->middleware('guest');
-
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
 
-Route::get('/register', [RegisterController::class, 'index']);
-
+Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
+
+Route::get('/{konser:slug}', [KonserController::class, 'show'])->middleware('auth');
 
 Route::get('/bigufestival', function () {
     return view('bigufestival');
@@ -49,8 +53,6 @@ Route::get('/datatiket', function () {
 Route::get('/metodebayar', function () {
     return view('metodebayar');
 });
-
-Route::get('/{konser:slug}', [KonserController::class, 'show']);
 
 Route::get('/bersuadesk', function () {
     return view('bersuadesk');

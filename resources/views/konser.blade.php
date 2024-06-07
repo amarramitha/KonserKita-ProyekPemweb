@@ -51,8 +51,6 @@
         </div>
     </div>
 
-
-
     <div class="inline-flex items-center justify-between mt-3 mb-8 px-10">
         <button onclick="toggleTeks('deskripsi', ['tiket', 'sk', 'talent'])" aria-current="page"
             class="px-10 py-2 text-sm font-medium text-white bg-brand-desk border border-gray-200 rounded-s-lg hover:bg-gray-100 hover:text-black focus:z-10 focus:ring-2 focus:ring-white focus:text-black dark:bg-white dark:border-gray-700 dark:text-white dark:hover:text-black dark:hover:bg-white dark:focus:ring-blue-500 dark:focus:text-black">
@@ -99,25 +97,25 @@
         @endif
     </div>
 
-<div id="talent" class="hidden grid-cols-10 gap-5 p-4  ">
-    @foreach ($konser->talent as $item)
-    <div class="flex flex-col items-center p-2 bg-brand-desk border-gray-200 rounded-xl shadow dark:border-gray-700 dark:bg-gray-800">
-        <img class="object-cover w-fit rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
-            src="storage/images/{{ $item->image }}" alt="">
-        <div class="flex flex-col justify-center items-center p-2 w-full">
-            <h5 class="text-2xl font-normal text-center text-white dark:text-white">{{ $item->name }}</h5>
+    <div id="talent" class="hidden grid-cols-10 gap-5 p-4  ">
+        @foreach ($konser->talent as $item)
+        <div class="flex flex-col items-center p-2 bg-brand-desk border-gray-200 rounded-xl shadow dark:border-gray-700 dark:bg-gray-800">
+            <img class="object-cover w-fit rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
+                src="storage/images/{{ $item->image }}" alt="">
+            <div class="flex flex-col justify-center items-center p-2 w-full">
+                <h5 class="text-2xl font-normal text-center text-white dark:text-white">{{ $item->name }}</h5>
+            </div>
         </div>
+        @endforeach
     </div>
-    @endforeach
-</div>
 
-<div id="sk" class="hidden w-auto mx-10 p-6 mb-20 bg-brand-desk rounded-lg shadow md:w-1/2 ">
-    @foreach ($konser->syaratketentuan as $item)
-    <ul class="space-y-4 text-gray-500 list-disc list-inside dark:text-gray-400">
-    <li class="font-normal text-white dark:text-gray-400 text-justify" >{{$item->syaratketentuan}}</li>
-    </ul>
-    @endforeach
-</div>
+    <div id="sk" class="hidden w-auto mx-10 p-6 mb-20 bg-brand-desk rounded-lg shadow md:w-1/2 ">
+        @foreach ($konser->syaratketentuan as $item)
+        <ul class="space-y-4 text-gray-500 list-disc list-inside dark:text-gray-400">
+        <li class="font-normal text-white dark:text-gray-400 text-justify" >{{$item->syaratketentuan}}</li>
+        </ul>
+        @endforeach
+    </div>
 
     <x-footer></x-footer>
 </body>

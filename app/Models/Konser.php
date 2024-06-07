@@ -14,7 +14,7 @@ class Konser extends Model
 {
     use HasFactory;
     protected $fillable = ['title', 'date', 'lokasi', 'slug', 'deskripsi'];
-    
+
     //relasi dengan syarat ketentuan
     public function syaratketentuan(){
         return $this->hasMany(Syaratketentuan::class, 'konser_id');
@@ -29,5 +29,10 @@ class Konser extends Model
     public function talent(): BelongsToMany
     {
         return $this->belongsToMany(Talent::class, 'konser_talent');
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
     }
 }
