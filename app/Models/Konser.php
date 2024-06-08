@@ -9,11 +9,17 @@ use App\Models\Syaratketentuan;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Cviebrock\EloquentSluggable\Sluggable;
+use Tonysm\RichTextLaravel\Models\Traits\HasRichText;
 
 class Konser extends Model
 {
-    use HasFactory;
-    protected $fillable = ['title', 'date', 'lokasi', 'slug', 'deskripsi'];
+    use HasFactory, Sluggable, HasRichText;
+    protected $fillable = ['title', 'date_start', 'date_end', 'time', 'lokasi', 'slug', 'deskripsi', 'image'];
+
+    protected $richTextAttributes = [
+        'deskripsi',
+    ];
 
     //relasi dengan syarat ketentuan
     public function syaratketentuan(){
@@ -31,8 +37,17 @@ class Konser extends Model
         return $this->belongsToMany(Talent::class, 'konser_talent');
     }
 
-    public function getRouteKeyName()
+    public function getRouteKeyName() //mendifinisikan slug sebagai utama
     {
         return 'slug';
+    }
+
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => 'title'
+            ]
+        ];
     }
 }

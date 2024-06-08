@@ -19,7 +19,7 @@
                </a>
            </li>
           <li>
-             <a href="/admin/dashboard/konsers" class="flex rounded-lg items-center p-2 group {{ Request::is('admin/dashboard/konsers') ? 'bg-brand-ungu text-white' : 'text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700' }}">
+             <a href="/admin/dashboard/konsers" class="flex rounded-lg items-center p-2 group {{ Request::is('admin/dashboard/konsers*') ? 'bg-brand-ungu text-white' : 'text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700' }}">
                 <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 4H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1Zm0 0-4 4m5 0H4m1 0 4-4m1 4 4-4m-4 7v6l4-3-4-3Z"/>
                 </svg>

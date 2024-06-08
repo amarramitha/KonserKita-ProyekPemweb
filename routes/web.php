@@ -15,6 +15,7 @@ Route::get('/', function () {
 
 Route::get('/admin/dashboard', [AdminController::class,'index']);
 
+Route::get('/admin/dashboard/konsers/checkSlug', [AdminKonserController::class, 'checkSlug'] )->middleware('auth');
 Route::resource('/admin/dashboard/konsers', AdminKonserController::class)->middleware('auth');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
