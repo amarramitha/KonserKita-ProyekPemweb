@@ -14,8 +14,10 @@ return new class extends Migration
         Schema::create('konsers', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->text('description');
-            $table->dateTime('date');
+            $table->string('deskripsi')->nullable();
+            $table->date('date_start');
+            $table->date('date_end');
+            $table->time('time');
             $table->string('lokasi');
             $table->string('slug')->unique();
             $table->timestamps();
