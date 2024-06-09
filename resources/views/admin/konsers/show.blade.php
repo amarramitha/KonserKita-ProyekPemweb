@@ -9,7 +9,7 @@
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12l4-4m-4 4 4 4"/>
                 </svg>
                 Back</a>
-            <a href="" class="inline-flex items-center px-3 py-2 text-xs font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+            <a href="/admin/dashboard/konsers/{{ $konser['slug'] }}/edit" class="inline-flex items-center px-3 py-2 text-xs font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
                 <svg class="w-6 h-6 text-white dark:text-dark" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                     <path fill-rule="evenodd" d="M11.32 6.176H5c-1.105 0-2 .949-2 2.118v10.588C3 20.052 3.895 21 5 21h11c1.105 0 2-.948 2-2.118v-7.75l-3.914 4.144A2.46 2.46 0 0 1 12.81 16l-2.681.568c-1.75.37-3.292-1.263-2.942-3.115l.536-2.839c.097-.512.335-.983.684-1.352l2.914-3.086Z" clip-rule="evenodd"/>
                     <path fill-rule="evenodd" d="M19.846 4.318a2.148 2.148 0 0 0-.437-.692 2.014 2.014 0 0 0-.654-.463 1.92 1.92 0 0 0-1.544 0 2.014 2.014 0 0 0-.654.463l-.546.578 2.852 3.02.546-.579a2.14 2.14 0 0 0 .437-.692 2.244 2.244 0 0 0 0-1.635ZM17.45 8.721 14.597 5.7 9.82 10.76a.54.54 0 0 0-.137.27l-.536 2.84c-.07.37.239.696.588.622l2.682-.567a.492.492 0 0 0 .255-.145l4.778-5.06Z" clip-rule="evenodd"/>
@@ -56,7 +56,11 @@
             <div class="max-w-screen-xl px-4 mx-auto 2xl:px-0">
               <div class="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16">
                 <div class="shrink-0 max-w-md lg:max-w-lg mx-auto">
-                  <img class="w-full dark:hidden" src="../../../storage/images/{{ $konser['image'] }}" alt="" />
+                    @if ($konser->image)
+                    <img class="w-full" src="{{ asset('storage/' . $konser->image) }}" alt="" />    
+                    @else
+                    <img class="w-full" src="{{ asset('storage/images/default.png') }}" alt="" />    
+                    @endif
                 </div>
 
                 <div class="mt-6 sm:mt-8 lg:mt-0">
@@ -68,8 +72,8 @@
                     {{ $konser['lokasi'] }}
                     </p>
                     <div class="mt-4 sm:mt-8 lg:mt-0">
-                      <p href="#" class="text-sm font-medium leading-none text-gray-900 dark:text-white">
-                        {{ \Carbon\Carbon::parse($konser['date'])->format('d F Y - H:i') }}
+                      <p class="text-sm font-medium leading-none text-gray-900 dark:text-white">
+                        {{ \Carbon\Carbon::parse($konser['date_start'])->format('d F Y') }}
                       </p>
                     </div>
                   </div>

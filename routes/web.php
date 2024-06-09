@@ -7,16 +7,21 @@ use App\Models\Konser;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\KonserController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 
 Route::get('/', function () {
-    return view('dashboard', ['konsers' => Konser::all()]);
+    return view('home', ['konsers' => Konser::all()]);
 });
 
-Route::get('/admin/dashboard', [AdminController::class,'index']);
+Route::get('/editprofil/{user:id}/edit', [ProfileController::class, 'edit'])->middleware('auth');
+Route::put('/editprofil/{user:id}', [ProfileController::class, 'update'])->middleware('auth');
+Route::get('/editprofil/checkId', [ProfileController::class, 'checkId'])->middleware('auth');
+Route::resource('/editprofil', ProfileController::class)->middleware('auth');
 
-Route::get('/admin/dashboard/konsers/checkSlug', [AdminKonserController::class, 'checkSlug'] )->middleware('auth');
-Route::resource('/admin/dashboard/konsers', AdminKonserController::class)->middleware('auth');
+Route::get('/admin/dashboard', [AdminController::class,'index'])->middleware('admin');
+Route::get('/admin/dashboard/konsers/checkSlug', [AdminKonserController::class, 'checkSlug'] )->middleware('admin');
+Route::resource('/admin/dashboard/konsers', AdminKonserController::class)->middleware('admin');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
@@ -26,6 +31,8 @@ Route::get('/register', [RegisterController::class, 'index'])->middleware('guest
 Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/{konser:slug}', [KonserController::class, 'show'])->middleware('auth');
+Route::get('/datatiket/{konser:slug}/{ticket:id}', [KonserController::class, 'belitiket'])->middleware('auth');
+
 
 Route::get('/bigufestival', function () {
     return view('bigufestival');
@@ -45,10 +52,6 @@ Route::get('/bigutiket', function () {
 
 Route::get('/bigutalent', function () {
     return view('bigutalent');
-});
-
-Route::get('/datatiket', function () {
-    return view('datatiket');
 });
 
 Route::get('/metodebayar', function () {
@@ -85,10 +88,6 @@ Route::get('/mytiket', function () {
 
 Route::get('/pembayaran', function () {
     return view('pembayaran');
-});
-
-Route::get('/editprofil', function () {
-    return view('editprofil');
 });
 
 Route::get('/lainnya', function () {

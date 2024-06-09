@@ -13,10 +13,10 @@
                     </h2>
                     <ul class="text-white font-medium">
                         <li class="mb-4">
-                            <a href="#">Hubungi Kami di :</a>
+                            <p href="#">Hubungi Kami di :</p>
                         </li>
                         <li class="flex space-x-4">
-                            <a href="#" class="hover:underline">
+                            <a href="https://wa.me/6285155202540" class="hover:underline">
                                 <span class="[&>svg]:h-5 [&>svg]:w-5">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 448 512">
                                         <path
@@ -24,18 +24,7 @@
                                     </svg>
                                 </span>
                             </a>
-                            <a href="#" class="hover:underline">
-                                <span class="[&>svg]:h-5 [&>svg]:w-5">
-                                    <svg class="h-8 w-8" width="24" height="24" viewBox="0 0 24 24"
-                                        stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" />
-                                        <path
-                                            d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
-                                    </svg>
-                                </span>
-                            </a>
-                            <a href="#" class="hover:underline">
+                            <a href="mailto:konserkita@gmail.com" class="hover:underline">
                                 <span class="[&>svg]:h-5 [&>svg]:w-5">
                                     <svg class="h-8 w-8" width="24" height="24" viewBox="0 0 24 24"
                                         stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
@@ -46,17 +35,6 @@
                                     </svg>
                                 </span>
                             </a>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h2 class="mb-6 text-sm font-semibold text-white uppercase">Informasi</h2>
-                    <ul class="text-white font-medium">
-                        <li class="mb-4">
-                            <a href="#" class="hover:underline">Tentang Kami</a>
-                        </li>
-                        <li>
-                            <a href="#" class="hover:underline">Syarat dan Ketentuan</a>
                         </li>
                     </ul>
                 </div>

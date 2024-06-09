@@ -10,16 +10,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Cviebrock\EloquentSluggable\Sluggable;
-use Tonysm\RichTextLaravel\Models\Traits\HasRichText;
 
 class Konser extends Model
 {
-    use HasFactory, Sluggable, HasRichText;
+    use HasFactory, Sluggable;
     protected $fillable = ['title', 'date_start', 'date_end', 'time', 'lokasi', 'slug', 'deskripsi', 'image'];
-
-    protected $richTextAttributes = [
-        'deskripsi',
-    ];
 
     //relasi dengan syarat ketentuan
     public function syaratketentuan(){

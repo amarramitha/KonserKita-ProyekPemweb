@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'ivandarmawan2020@gmail.com',
-            'password' => 'gembul88',
+            'password' => bcrypt('gembul88'),
             'role' => 'admin'
         ]);
     }

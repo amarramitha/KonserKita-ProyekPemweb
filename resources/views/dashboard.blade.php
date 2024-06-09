@@ -162,8 +162,6 @@
         </div>
     </div>
 
-
-
     <!--penyanyi-->
     <div
         class="block w-full px-5 py-2 p-10 bg-brand-blue shadow">
