@@ -26,6 +26,7 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "dropzone": "^6.0.0-beta.2",
         "flowbite-datepicker": "^1.2.6"
     }
 }

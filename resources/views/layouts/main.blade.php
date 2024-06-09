@@ -17,23 +17,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Admin DashBoard</title>
+    <link rel="icon" href="{{ asset('storage/images/logo.png') }}">
+    <title>KonserKita DashBoard</title>
 </head>
 <body>
-
-
-
     {{-- navbar --}}
     @include('layouts.header')
 
     <!-- Sidebar -->
     @include('layouts.sidebar')
-
-      <div class="p-4">
+      <div class="h-auto">
          @yield('content')
       </div>
-
-
+    <x-footer></x-footer>
 </body>
 
 <script>

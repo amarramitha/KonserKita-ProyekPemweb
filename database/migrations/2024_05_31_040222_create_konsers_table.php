@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('lokasi');
             $table->string('slug')->unique();
             $table->timestamps();
-            $table->string('image');
+            $table->string('image')->nullable();
         });
     }
 

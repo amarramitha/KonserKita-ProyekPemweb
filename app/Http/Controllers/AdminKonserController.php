@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Konser;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 
 class AdminKonserController extends Controller
@@ -31,7 +32,8 @@ class AdminKonserController extends Controller
      */
     public function store(Request $request)
     {
-        // return $request->all();
+        //ddd($request);
+        //return $request->file('image')->store('konser-images');
         $validatedData = $request->validate([
             'title' => 'required|max:255',
             'deskripsi' => 'required',
@@ -40,8 +42,12 @@ class AdminKonserController extends Controller
             'time' => 'required',
             'lokasi' => 'required',
             'slug' => 'required|unique:konsers',
-            'image' => 'required',
+            'image' => 'image|file|max:10048',
         ]);
+
+        if($request->file('image')){
+            $validatedData['image'] = $request->file('image')->store('konser-images');
+        }
 
         Konser::create($validatedData);
 
@@ -74,21 +80,30 @@ class AdminKonserController extends Controller
      */
     public function update(Request $request, Konser $konser)
     {
-        $rules = $request->validate([
+        $validatedData = $request->validate([
             'title' => 'required|max:255',
             'deskripsi' => 'required',
             'date_start' => 'required',
             'date_end' => 'required',
             'time' => 'required',
             'lokasi' => 'required',
+            'image' => 'image|file|max:10048',
         ]);
 
         if($request->slug != $konser->slug){
-            $rules['slug'] = 'required|unique:konsers';
+            $validatedData = $request->validate()['slug'] = 'required|unique:konsers';
+        }
+
+        if($request->file('image'))
+        {
+            if($request->oldImage){
+                Storage::delete($request->oldImage);
+            }
+            $validatedData['image'] = $request->file('image')->store('konser-images');   
         }
 
         Konser::where('id', $konser->id)
-            ->update($rules);
+            ->update($validatedData);
 
         return redirect('/admin/dashboard/konsers')->with('success', 'Konser telah diperbarui!');
 
@@ -99,6 +114,9 @@ class AdminKonserController extends Controller
      */
     public function destroy(Konser $konser)
     {
+        if($konser->image){
+            Storage::delete($konser->image);
+        }
         Konser::destroy($konser->id);
         return redirect('/admin/dashboard/konsers')->with('success', 'Konser berhasil dihapus!');
     }
