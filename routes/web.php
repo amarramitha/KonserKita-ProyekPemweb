@@ -11,7 +11,15 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 
 Route::get('/', function () {
-    return view('home', ['konsers' => Konser::all()]);
+    return view('dashboard', ['konsers' => Konser::all()]);
+});
+
+Route::get('/metodebayar', function () {
+    return view('metodebayar', ['konsers' => Konser::all()]);
+});
+
+Route::get('/pembayaran', function () {
+    return view('pembayaran', ['konsers' => Konser::all()]);
 });
 
 Route::get('/editprofil/{user:id}/edit', [ProfileController::class, 'edit'])->middleware('auth');
@@ -32,6 +40,10 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/{konser:slug}', [KonserController::class, 'show'])->middleware('auth');
 Route::get('/datatiket/{konser:slug}/{ticket:id}', [KonserController::class, 'belitiket'])->middleware('auth');
+Route::post('/checkout', [KonserController::class, 'process'])->middleware('auth');
+Route::get('/checkout/{purchase}', [KonserController::class, 'checkout'])->middleware('auth')->name('checkout');
+Route::get('/checkout', [KonserController::class, 'process'])->middleware('auth');
+
 
 
 Route::get('/bigufestival', function () {

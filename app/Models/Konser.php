@@ -13,7 +13,7 @@ use Cviebrock\EloquentSluggable\Sluggable;
 
 class Konser extends Model
 {
-    use HasFactory, Sluggable;
+    use HasFactory, Sluggable, HasFactory;
     protected $fillable = ['title', 'date_start', 'date_end', 'time', 'lokasi', 'slug', 'deskripsi', 'image'];
 
     //relasi dengan syarat ketentuan
