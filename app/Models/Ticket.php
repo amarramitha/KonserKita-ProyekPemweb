@@ -15,4 +15,9 @@ class Ticket extends Model
     {
         return $this->belongsTo(Konser::class);
     }
+
+    public function purchase(): BelongsTo   
+    {
+        return $this->belongsTo(Purchase::class);
+    }
 }

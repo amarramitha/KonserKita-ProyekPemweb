@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Konser;
 use App\Models\Ticket;
+use App\Models\Purchase;
 use Illuminate\Http\Request;
 
 class KonserController extends Controller
@@ -23,5 +24,63 @@ class KonserController extends Controller
         $konser = Konser::with(['ticket'])->where('slug', $slug)->firstOrFail();
         // ddd($konser);
         return view('datatiket', compact('konser'));
+    }
+
+    public function process(Request $request)
+    {
+        //validasi input
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email',
+            'nik' => 'required|numeric|unique:users,nik', // Contoh validasi untuk NIK unik di tabel users
+            'nohp' => 'nullable|numeric',
+            //'price' => 'required|numeric',
+        ]);
+
+        User::where('email', $validatedData['email'])
+            ->update($validatedData);
+
+        $purchase = Purchase::create([
+            'user_id' => auth()->user()->id,
+            'ticket_id' => $request->id,
+            'status' => 'pending',
+        ]);
+
+        // Set your Merchant Server Key
+        \Midtrans\Config::$serverKey = config('midtrans.serveykey');
+        // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
+        \Midtrans\Config::$isProduction = false;
+        // Set sanitization on (default)
+        \Midtrans\Config::$isSanitized = true;
+        // Set 3DS transaction for credit card to true
+        \Midtrans\Config::$is3ds = true;
+
+        $params = array(
+            'transaction_details' => array(
+                'order_id' => rand(),
+                'gross_amount' => $request->price,
+            ),
+            'customer_details' => array(
+                'name' => $request->name,
+                'email' => $request->email,
+                'nik' => $request->nik,
+                'nohp' => $request->nohp,
+            )
+        );
+        
+        $snapToken = \Midtrans\Snap::getSnapToken($params);
+
+        $purchase->snap_token = $snapToken;
+        $purchase->save();
+        // ddd($transaction);
+        return redirect()->route('checkout', $purchase->id);
+    }
+
+    public function checkout(Purchase $purchase)
+    {
+        $konser = Konser::with(['ticket'])->where('id', $purchase->ticket_id)->firstOrFail();
+        $user = User::Where('id', $purchase->user_id)->firstOrFail();
+        // ddd($user);
+        return view('checkout', compact('konser', 'user'));
     }
 }
