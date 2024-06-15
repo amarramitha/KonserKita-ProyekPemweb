@@ -66,6 +66,9 @@
                             class="text-white hover:underline dark:text-blue-500">Daftar</a>
                     </div>
                 </form>
+                    <br>
+                    <a href="/google" class="flex w-full text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-brand-ungu font-medium rounded-lg text-sm p-2.5 text-center justify-center">
+                    Login dengan Google</a>
             </div>
 
         </div>

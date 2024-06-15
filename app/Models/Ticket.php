@@ -10,14 +10,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Ticket extends Model
 {
     use HasFactory;
+    protected $fillable = ['konser_id','title', 'price', 'kuota', 'status'];
     //relasi menuju konser
     public function konser(): BelongsTo
     {
         return $this->belongsTo(Konser::class);
     }
 
-    public function purchase(): BelongsTo   
+    public function purchase()   
     {
-        return $this->belongsTo(Purchase::class);
+        return $this->hasMany(Purchase::class);
     }
 }

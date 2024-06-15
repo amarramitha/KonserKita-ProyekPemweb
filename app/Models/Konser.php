@@ -27,9 +27,9 @@ class Konser extends Model
         return $this->hasMany(Ticket::class, 'konser_id');
     }
 
-    public function talent(): BelongsToMany
+    public function talent()
     {
-        return $this->belongsToMany(Talent::class, 'konser_talent');
+        return $this->hasMany(Talent::class, 'konser_id');
     }
 
     public function getRouteKeyName() //mendifinisikan slug sebagai utama

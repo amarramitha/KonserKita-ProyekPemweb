@@ -34,7 +34,7 @@
             </div>
             <div class=" max-w-md mb-2">
                 <input value="{{ old('deskripsi') }}" id="x" type="hidden" name="deskripsi">
-                <trix-editor input="x" class="trix-content"></trix-editor>
+                <trix-editor input="x" class="trix-content h-80"></trix-editor>
                 @error('deskripsi')    
                 <p class="mt-2 text-sm text-red-600 dark:text-red-500">{{ $message }}</p>
                 @enderror
