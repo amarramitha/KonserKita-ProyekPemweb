@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Konser;
+use App\Models\Ticket;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Cviebrock\EloquentSluggable\Services\SlugService;
@@ -102,8 +103,7 @@ class AdminKonserController extends Controller
             $validatedData['image'] = $request->file('image')->store('konser-images');   
         }
 
-        Konser::where('id', $konser->id)
-            ->update($validatedData);
+        Konser::where('id', $konser->id)->update($validatedData);
 
         return redirect('/admin/dashboard/konsers')->with('success', 'Konser telah diperbarui!');
 
@@ -126,5 +126,6 @@ class AdminKonserController extends Controller
         $slug = SlugService::createSlug(Konser::class, 'slug', $request->title);
         return response()->json(['slug' => $slug]);
     }
+
 }
 

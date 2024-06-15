@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Syaratketentuan extends Model
 {
     use HasFactory;
+    protected $fillable = ['konser_id', 'syaratketentuan'];
 
     public function konser(): BelongsTo
     {

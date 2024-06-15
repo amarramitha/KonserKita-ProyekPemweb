@@ -1,91 +1,81 @@
-<x-header></x-header>
+@extends('layouts.main')
 
-<body class="bg-brand-blue h-auto w-full font-sans justify-center items-center">
-    <x-navbar></x-navbar>
-    <div class="w-full mx-auto p-6 mb-5 bg-transparent rounded-xl shadow md:w-3/4">
-        <div class="flex justify-between items-center mb-2">
-            <h2 class="text-2xl font-bold text-white md:text-4xl">Riwayat Transaksi</h2>
-        </div>
-    </div>
+@section('content')
+    <div class="mt-16 bg-brand-blue h-auto w-full font-sans min-h-screen">
+        <div class="justify-center items-center">
+            <div class="w-full mx-auto p-6 mb-5 bg-transparent rounded-xl shadow md:w-3/4">
+                <div class="flex justify-between items-center mb-2">
+                    <h2 class="text-2xl font-bold text-white md:text-4xl">Riwayat Transaksi</h2>
+                </div>
+            </div>
 
-    <div class="w-full mx-auto p-6 mb-10 bg-brand-desk rounded-xl shadow md:w-3/4">
-        <div class="flex flex-col md:flex-row justify-between items-center mb-2">
-            <div class="overflow-x-auto w-full">
-                <table class="min-w-full">
-                    <thead>
+            <div class="relative p-2 mx-auto bg-brand-desk overflow-x-auto shadow-md rounded-lg md:w-3/4">
+                <table class="w-full text-sm text-left rtl:text-right text-gray-500">
+                    <thead class="text-md text-white uppercase border-t border-b">
                         <tr>
-                            <th></th>
-                            <th class="px-2 text-center text-white font-semibold text-sm md:text-base">Nomor Transaksi
+                            <th scope="col" class="px-16 py-3">
+                                <span class="sr-only">Image</span>
                             </th>
-                            <th class="px-2 text-center text-white font-semibold text-sm md:text-base">Waktu Beli</th>
-                            <th class="px-2 text-center text-white font-semibold text-sm md:text-base">Total</th>
-                            <th class="px-2 text-center text-white font-semibold text-sm md:text-base">Status</th>
+                            <th scope="col" class="px-6 py-3">
+                                Nama Tiket
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Waktu Beli
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Total
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Status
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Action
+                            </th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td class="text-center">
-                                <img src="{{ asset('storage/images/bigu.png') }}"
-                                    class="object-cover w-full max-w-xs rounded-t-lg h-48 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg">
+                    <tbody class="border-b">
+                        @foreach ($purchase as $p)
+                        <tr class="hover:bg-brand-ungu">
+                            <td class="p-4">
+                                <img src="{{ asset('storage/' . $p->ticket->konser->image) }}" class="w-16 md:w-32 max-w-full max-h-full" alt="">
                             </td>
-                            <td class="px-2 text-center text-white font-normal text-sm md:text-base">XXXXXXXXXXXXX</td>
-                            <td class="px-2 text-center text-white font-normal text-sm md:text-base">21 Mei 2024, 21.45
-                                WIB</td>
-                            <td class="px-2 text-center text-white font-normal text-sm md:text-base">Rp 316.000</td>
-                            <td class="px-2 text-center text-white font-normal text-sm md:text-base">Kedaluwarsa</td>
+                            <td class="px-6 py-4 font-semibold text-white">
+                                {{ $p->ticket->konser->title }} - {{ $p->ticket->title }}
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="flex items-center text-white">
+                                {{ \Carbon\Carbon::parse($p['created_at'])->format('j F Y - H:i') }}   
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="flex items-center text-white">
+                                {{ $p->ticket->price+5000 }}        
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">
+                                @if ($p->status != 'success')
+                                <button type="button" class="focus:outline-none text-white font-semibold bg-red-700 focus:ring-4 focus:ring-red-300 rounded-lg text-sm px-2.5 py-0.5">Pending</button>
+                                @else
+                                <button type="button" class="focus:outline-none text-white font-semibold bg-green-700 focus:ring-4 focus:ring-green-300 rounded-lg text-sm px-2.5 py-0.5">Success</button>
+                                @endif
+                            </td>
+                            <td class="px-6 py-4 inline-flex">
+                                <a href="/checkout/{{ $p->id }}" class=" focus:outline-none bg-blue-100 text-blue-800 hover:bg-blue-800 hover:text-white text-xs font-semibold me-2 px-2.5 py-0.5 rounded inline-flex items-center justify-center">
+                                    bayar sekarang  
+                                </a>
+                                <a href="/tiket/{{ $p->id }}" class=" focus:outline-none bg-blue-100 text-green-800 hover:bg-green-800 hover:text-white text-xs font-semibold me-2 px-2.5 py-0.5 rounded inline-flex items-center justify-center">
+                                    Download Tiket  
+                                </a>
+                            </td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
-            <div class="mt-2 md:mt-0">
-                <a href="/detailtransaksi"
-                    class="block px-4 py-2 bg-brand-blue text-white rounded-xl text-center hover:bg-slate-900">Detail</a>
-            </div>
         </div>
     </div>
+@endsection
 
-    <div class="w-full mx-auto p-6 mb-10 bg-brand-desk rounded-xl shadow md:w-3/4">
-        <div class="flex flex-col md:flex-row justify-between items-center mb-2">
-            <div class="overflow-x-auto w-full">
-                <table class="min-w-full">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th class="px-2 text-center text-white font-semibold text-sm md:text-base">Nomor Transaksi
-                            </th>
-                            <th class="px-2 text-center text-white font-semibold text-sm md:text-base">Waktu Beli</th>
-                            <th class="px-2 text-center text-white font-semibold text-sm md:text-base">Total</th>
-                            <th class="px-2 text-center text-white font-semibold text-sm md:text-base">Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="px-2">
-                                <img src="{{ asset('storage/images/bigu.png') }}"
-                                    class="object-cover w-full max-w-xs rounded-t-lg h-48 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg">
-                            </td>
-                            <td class="px-2 text-center text-white font-normal text-sm md:text-base">XXXXXXXXXXXXX</td>
-                            <td class="px-2 text-center text-white font-normal text-sm md:text-base">21 Mei 2024, 21.45
-                                WIB</td>
-                            <td class="px-2 text-center text-white font-normal text-sm md:text-base">Rp 167.200</td>
-                            <td class="px-2 text-center text-white font-normal text-sm md:text-base">Menunggu Pembayaran
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="mt-2 md:mt-0 md:ml-4">
-                <a href=""
-                    class="block px-4 py-2 bg-brand-blue text-white rounded-xl text-center  hover:bg-slate-900">Detail</a>
-            </div>
-            <div class="mt-2 md:mt-0 md:ml-4">
-                <a href="/pembayaran"
-                    class="block px-4 py-2 bg-gray-300 text-brand-blue rounded-xl text-center hover:bg-white">Bayar</a>
-            </div>
-        </div>
-    </div>
-
-    <x-footer></x-footer>
-</body>
-
-</html>
+<script>
+    
+</script>

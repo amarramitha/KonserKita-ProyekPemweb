@@ -13,9 +13,11 @@ return new class extends Migration
     {
         Schema::create('talents', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('konser_id');
             $table->string('name');
             $table->timestamps();
             $table->string('image');
+            $table->foreign('konser_id')->references('id')->on('konsers')->onDelete('cascade');
         });
     }
 

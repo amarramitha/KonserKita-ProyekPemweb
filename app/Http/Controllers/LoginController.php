@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\RedirectResponse;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\RedirectResponse;
+use Laravel\Socialite\Facades\Socialite;
 
 class LoginController extends Controller
 {
@@ -30,6 +32,38 @@ class LoginController extends Controller
             }
         }
         return back()->with('loginError', 'Login Failed!');
+    }
+
+    public function redirectGoogle()
+    {
+        return Socialite::driver('google')->redirect();
+    }
+
+    public function callbackGoogle()
+    {
+        $user = Socialite::driver('google')->user();
+        // ddd($user);
+        $registeredUser = User::where('email', $user->email)->first();
+        if (!$registeredUser)
+        {
+            $user = User::updateOrCreate([
+                'google_id' => $user->id,
+            ], [
+                'name' => $user->name,
+                'email' => $user->email,
+                'image' => $user->avatar,
+                'google_token' => $user->token,
+                'google_refresh_token' => $user->refreshToken,
+            ]);
+         
+            Auth::login($user);
+         
+            return redirect('/');
+        }
+        Auth::login($registeredUser);
+
+        return redirect('/');
+        
     }
 
     public function logout(Request $request)

@@ -7,7 +7,7 @@
 
     @if (session()->has('success'))
     <div id="session" class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
-        <div  class="flex max-w-md items-center p-4 mb-4 text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" role="alert">
+        <div class="flex max-w-md items-center p-4 mb-4 text-green-800 rounded-lg bg-green-300 dark:bg-gray-800 dark:text-green-400" role="alert">
             <div class="ms-3 text-sm font-medium">
                 {{ session('success') }}
             </div>

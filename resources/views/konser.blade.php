@@ -79,7 +79,7 @@
         <div id="tiket" class="hidden">
             @if (!empty($konser->ticket))
                 @foreach ($konser->ticket as $t)
-                    <div class="w-auto mx-10 p-6 mb-10 bg-brand-desk rounded-xl shadow md:w-2/3">
+                    <div class="mx-10 p-6 mb-10 bg-brand-desk rounded-xl shadow md:w-2/3">
                         <div class="flex justify-between items-center mb-2">
                             <h5 class="text-2xl font-bold text-white dark:text-white">{{ $t->title }}</h5>
                             <button class="px-4 py-2 font-bold bg-white text-brand-blue rounded-xl">{{ $t->status }}</button>
@@ -118,8 +118,6 @@
             </ul>
             @endforeach
         </div>
-    
-        <x-footer></x-footer>
     </div>
 @endsection
 

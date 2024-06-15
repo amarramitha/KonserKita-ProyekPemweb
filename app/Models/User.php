@@ -22,6 +22,9 @@ class User extends Authenticatable
         'email',
         'password',
         'image',
+        'google_id',
+        'google_token',
+        'google_refresh_token',
     ];
 
     /**
@@ -47,7 +50,7 @@ class User extends Authenticatable
         ];
     }
 
-    public function purchase(): BelongsTo
+    public function purchase()
     {
-        return $this->belongsTo(Purchase::class);}
+        return $this->hasMany(Purchase::class);}
 }
