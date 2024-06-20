@@ -73,7 +73,7 @@
         </div>
     
         <div id="deskripsi" class="hidden w-auto mx-10 p-6 mb-20 bg-brand-desk rounded-lg shadow md:w-1/2 ">
-            <p class="font-normal text-white dark:text-gray-400 text-justify">{{$konser['description']}}</p>
+            <div id="trix-content">{!! $konser['deskripsi'] !!}</div>
         </div>
     
         <div id="tiket" class="hidden">
@@ -87,7 +87,7 @@
                         <hr class="mb-2 border-gray-200 sm:mx-auto dark:border-gray-700" />
                         <p class="font-normal text-gray-200 dark:text-gray-400">Harga</p>
                         <div class="flex justify-between items-center">
-                            <h6 class="text-2xl font-bold text-white dark:text-gray-400">{{ $t->price }}</h6>
+                            <h6 class="text-2xl font-bold text-white dark:text-gray-400">{{ Number::format($t->price, locale : 'de') }}</h6>
                             <a href="/datatiket/{{ $konser['slug']}}/{{ $t->id }}" class="px-4 py-2 bg-brand-button font-bold text-white rounded-xl hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Beli</a>
                         </div>
                     </div>
@@ -103,7 +103,7 @@
             @foreach ($konser->talent as $item)
             <div class="flex flex-col items-center p-2 bg-brand-desk border-gray-200 rounded-xl shadow dark:border-gray-700 dark:bg-gray-800">
                 <img class="object-cover w-fit rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
-                    src="storage/images/{{ $item->image }}" alt="">
+                    src="storage/{{ $item->image }}" alt="">
                 <div class="flex flex-col justify-center items-center p-2 w-full">
                     <h5 class="text-2xl font-normal text-center text-white dark:text-white">{{ $item->name }}</h5>
                 </div>
@@ -113,8 +113,8 @@
     
         <div id="sk" class="hidden w-auto mx-10 p-6 mb-20 bg-brand-desk rounded-lg shadow md:w-1/2 ">
             @foreach ($konser->syaratketentuan as $item)
-            <ul class="space-y-4 text-gray-500 list-disc list-inside dark:text-gray-400">
-            <li class="font-normal text-white dark:text-gray-400 text-justify" >{{$item->syaratketentuan}}</li>
+            <ul>
+            <li><div id="trix-content">{!! $item['syaratketentuan'] !!}</div></li>
             </ul>
             @endforeach
         </div>

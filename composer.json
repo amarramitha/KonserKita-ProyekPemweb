@@ -6,12 +6,12 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
-        "barryvdh/laravel-dompdf": "^2.2",
         "cviebrock/eloquent-sluggable": "^11.0",
         "laravel/framework": "^11.0",
         "laravel/socialite": "^5.14",
         "laravel/tinker": "^2.9",
         "midtrans/midtrans-php": "^2.5",
+        "simplesoftwareio/simple-qrcode": "^4.2",
         "tonysm/rich-text-laravel": "^3.1"
     },
     "require-dev": {

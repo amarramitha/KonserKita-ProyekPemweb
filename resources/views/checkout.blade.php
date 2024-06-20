@@ -34,31 +34,31 @@
                     </span>
                 </div>
                 <hr class="mb-2 border-gray-200 sm:mx-auto" />
-                <img class="w-max-sms" src="{{ asset('storage/' . $konser->image) }}">
-                <h5 class="text-xl font-bold text-white">{{ $konser->title }} ({{ $konser->lokasi }})</h5>
+                <img class="w-max-sms" src="{{ asset('storage/' . $ticket->konser->image) }}">
+                <h5 class="text-xl font-bold text-white">{{ $ticket->konser->title }} ({{ $ticket->konser->lokasi }})</h5>
                 <hr class="mb-2 border-gray-200 sm:mx-auto" />
                 <div class="flex justify-between w-full">
                     <h5 class="text-l font-semibold text-brand-huruf">Tiket</h5>
                     <h5 class="text-l font-semibold text-brand-huruf">Jumlah</h5>
                 </div>
                 <div class="flex justify-between w-full">
-                    <h5 class="text-xl text-white font-semibold">{{ $konser->ticket[0]->title }}</h5>
+                    <h5 class="text-xl text-white font-semibold">{{ $ticket->title }}</h5>
                     <h5 class="text-xl font-semibold text-white">x1</h5>
                 </div>
-                <h5 class="text-xl font-semibold text-white">Rp {{ $konser->ticket[0]->price }}</h5>
+                <h5 class="text-xl font-semibold text-white">Rp {{ Number::format($ticket->price, locale: 'de') }}</h5>
                 <hr class="mb-2 border-gray-200 sm:mx-auto" />
                 <div class="flex justify-between w-full">
                     <h5 class="text-xl text-brand-huruf font-bold">Subtotal</h5>
-                    <h5 class="text-xl font-semibold text-white">Rp {{ $konser->ticket[0]->price }}</h5>
+                    <h5 class="text-xl font-semibold text-white">Rp {{ Number::format($ticket->price, locale: 'de') }}</h5>
                 </div>
                 <div class="flex justify-between w-full">
                     <h5 class="text-xl text-brand-huruf font-bold">Biaya Layanan</h5>
-                    <h5 class="text-xl font-semibold text-white">Rp 5.000</h5>
+                    <h5 class="text-xl font-semibold text-white">Rp {{ Number::format(5000, locale: 'de') }}</h5>
                 </div>
                 <hr class="mb-2 border-gray-200 sm:mx-auto" />
                 <div class="flex justify-between w-full">
                     <h5 class="text-xl text-brand-huruf font-bold">Total</h5>
-                    <h5 class="text-xl font-semibold text-white">Rp {{ $konser->ticket[0]->price+5000 }}</h5>
+                    <h5 class="text-xl font-semibold text-white">Rp {{ Number::format($ticket->price+5000, locale: 'de') }}</h5>
                 </div>
             </div>
                 <div class="flex justify-center mt-2 md:mt-0">

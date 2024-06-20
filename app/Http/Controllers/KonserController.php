@@ -19,11 +19,11 @@ class KonserController extends Controller
         return view('konser', compact('konser'));
     }
 
-    public function belitiket($slug)
+    public function belitiket($slug, $id)
     {
-        $konser = Konser::with(['ticket'])->where('slug', $slug)->firstOrFail();
-        // ddd($konser);
-        return view('datatiket', compact('konser'));
+        $ticket = Ticket::with(['konser'])->where('id', $id)->firstOrFail();
+        // ddd($ticket);
+        return view('datatiket', compact('ticket'));
     }
 
     public function process(Request $request)
@@ -94,10 +94,9 @@ class KonserController extends Controller
 
     public function checkout(Purchase $purchase)
     {
-        $konser = Konser::with(['ticket'])->where('id', $purchase->ticket_id)->firstOrFail();
+        $ticket = Ticket::with(['konser'])->where('id', $purchase->ticket_id)->firstOrFail();
         $user = User::Where('id', $purchase->user_id)->firstOrFail();
-        // ddd($user);
-        return view('checkout', compact('konser', 'user', 'purchase'));
+        return view('checkout', compact('ticket', 'user', 'purchase'));
     }
 
     public function success(Purchase $purchase)

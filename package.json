@@ -27,6 +27,7 @@
     "license": "ISC",
     "dependencies": {
         "dropzone": "^6.0.0-beta.2",
-        "flowbite-datepicker": "^1.2.6"
+        "flowbite-datepicker": "^1.2.6",
+        "instascan": "^1.0.0"
     }
 }
