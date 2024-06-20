@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\RedirectResponse;
 use Laravel\Socialite\Facades\Socialite;
 
@@ -51,6 +53,7 @@ class LoginController extends Controller
             ], [
                 'name' => $user->name,
                 'email' => $user->email,
+                'password' => bcrypt(Hash::make(Str::random(24))),
                 'image' => $user->avatar,
                 'google_token' => $user->token,
                 'google_refresh_token' => $user->refreshToken,

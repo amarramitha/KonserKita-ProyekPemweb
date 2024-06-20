@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
+use Illuminate\Contracts\Encryption\DecryptException;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -46,7 +49,9 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        return view('admin.users.show',[
+            'user' => $user,
+        ]);
     }
 
     /**
@@ -54,7 +59,28 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        // ddd($request);
+        $validatedData = $request->validate([
+            'name' => 'max:255',
+            'email' => 'email:dns',
+            'image' => 'image|file|max:5048',
+            'nik' => '',
+            'nohp' => '',
+        ]);
+
+        if($request->file('image'))
+        {
+            if($request->oldImage){
+                Storage::delete($request->oldImage);
+            }
+            $validatedData['image'] = $request->file('image')->store('profile-images');   
+        }
+
+        // ddd($validatedData);
+        User::where('id', $user->id)
+            ->update($validatedData);
+
+        return redirect('/admin/dashboard/users')->with('success', 'Profile telah diperbarui!');
     }
 
     /**
@@ -62,6 +88,7 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        User::destroy($user->id);
+        return redirect('/admin/dashboard/users')->with('success', 'Data pengguna berhasil dihapus!');
     }
 }

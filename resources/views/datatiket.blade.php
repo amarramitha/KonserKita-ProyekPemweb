@@ -40,7 +40,7 @@
         @endif
 
         <div>
-        <img class="h-auto max-w-lg transition-all duration-300 rounded-lg blur-sm hover:blur-none" src="{{ asset('storage/' . $konser->image) }}" alt="image description">
+        <img class="h-auto max-w-lg transition-all duration-300 rounded-lg blur-sm hover:blur-none" src="{{ asset('storage/' . $ticket->konser->image) }}" alt="image description">
         </div>
         <form class="space-y-6" action="/checkout" method="POST">
             @csrf
@@ -53,15 +53,15 @@
                     </svg>
     
                     <span class="text-xl font-medium text-center items-center text-white">
-                        Data Pemesan - {{ $konser->title }}  {{ $konser->ticket[0]->title }}
+                        Data Pemesan - {{ $ticket->konser->title }}  {{ $ticket->title }}
                     </span>
                 </div>
                 <hr class="mb-2 border-gray-200 sm:mx-auto" />
                 <div>
                     <label for="name" class="block mb-2 text-sm font-medium text-white">Nama Lengkap
                     </label>
-                    <input type="hidden" name="slug" id="slug" value="{{ $konser->slug }}">
-                    <input type="hidden" name="id" id="id" value="{{ $konser->ticket[0]->id }}">
+                    <input type="hidden" name="slug" id="slug" value="{{ $ticket->konser->slug }}">
+                    <input type="hidden" name="id" id="id" value="{{ $ticket->id }}">
                     <input type="hidden" name="name" id="name" value="{{ Auth::user()->name }}">
                     <input type="text" name="name" id="name" value="{{ Auth::user()->name }}"
                         class="bg-brand-blue border border-gray-300 text-white text-sm rounded-lg focus:ring-white focus:border-gray-300 block w-full p-2.5"
@@ -96,8 +96,8 @@
                 <div>
                     <label for="price" class="block mb-2 text-sm font-medium text-white">Harga Tiket
                     </label>
-                    <input type="hidden" name="price" id="price" value="{{ $konser->ticket[0]->price }}">
-                    <input type="price" name="price" id="price" value="{{ $konser->ticket[0]->price }}"
+                    <input type="hidden" name="price" id="price" value="{{ $ticket->price }}">
+                    <input type="price" name="price" id="price" value="{{ $ticket->price }}"
                         class="bg-brand-blue border border-gray-300 text-white text-sm rounded-lg focus:ring-white focus:border-gray-300 block w-full p-2.5"
                         readonly />
                 </div>
