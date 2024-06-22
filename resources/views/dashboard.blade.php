@@ -34,20 +34,21 @@
             </div>
         </section>
         <!--carousel-->
-        <div
-            class="block w-full px-5 py-5 p-10 bg-brand-blue shadow">
-    
-            <h5 class="mx-10 mt-5 mb-2 text-2xl font-bold tracking-tight text-white italic">Paling Banyak Dibeli!</h5>
-            <p class="mx-10 font-normal text-white mb-8 text-base">Kumpulan konser yang paling banyak dibeli di
+        <div class="block w-full px-5 py-5 p-10 bg-brand-blue shadow">
+            <h5 class="mx-10 mt-5 mb-2 text-2xl font-bold tracking-tight text-white italic">Paling Baru!</h5>
+            <p class="mx-10 font-normal text-white mb-8 text-base">Kumpulan konser terbaru di
                 Konserkita yang mungkin kamu sukai.</p>
-    
-    
+            <div class="flex justify-end mr-5">
+                <a href="/konsers" class="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">
+                    Selengkapnya
+                </a>
+            </div>
             <div id="default-carousel" class="relative w-full h-full max-w-screen-xl max-h-svh" data-carousel="slide">
                 <!-- Carousel wrapper -->
                 <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
                     <!-- Item 1 -->
                     @foreach ($konsers as $k )
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <div class="hidden duration-500 ease-in-out" data-carousel-item>
                         <a href="/{{ $k['slug'] }}">
                             <img src="{{ asset('storage/' . $k['image']) }}"
                                 class="absolute block w-fit h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
@@ -95,14 +96,13 @@
         </div>
     
         <!--grid-->
-        <div
-            class="relative w-full h-full bg-gray-900 border border-brand-blue shadow">
+        <div class="relative w-full h-full bg-gray-900 border border-brand-blue shadow">
             <img src="{{ asset('storage/images/2.jpg') }}"
                 class="absolute inset-0 w-full h-full object-cover mix-blend-overlay brightness-50" alt="Background Image">
-            <div class="relative p-10">
-                <h5 class="mb-2 text-2xl font-bold text-center tracking-tight text-white">Sebentar Lagi!
+            <div class="relative p-2">
+                <h5 class="text-2xl font-bold text-center tracking-tight text-white">Sebentar Lagi!
                 </h5>
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="grid grid-cols-3 gap-4">
                     <div>
                         <img class="max-w-full rounded-lg p-6" src="{{ asset('storage/poster-images/poster1.png') }}"
                             alt="">
@@ -116,7 +116,7 @@
                             alt="">
                     </div>
                 </div>
-                <div class="flex justify-center mt-8">
+                <div class="flex justify-center">
                     <a href="/lainnya"
                         class="inline-flex items-center px-5 py-3 text-sm font-medium text-center text-white bg-transparent border border-white rounded-lg hover:bg-brand-purple focus:ring-4 focus:outline-none focus:ring-gray-900 dark:bg-brand-purple dark:hover:bg-brand-purple dark:focus:ring-brand-ungu">
                         Lainnya
@@ -131,30 +131,40 @@
     
             <h5 class="mx-10 mt-5 mb-3 text-2xl font-bold tracking-tight text-white italic">Cari Penyanyi Favoritmu!</h5>
             <p class="mx-10 font-normal text-white mb-8 text-base">Ayo cari konser sesuai penyanyi favoritmu.</p>
-    
+
             <div id="talent-poster" class="relative" data-carousel="static">
                 <!-- Carousel wrapper -->
                 <div class="grid grid-cols-2 md:grid-cols-5 gap-1 relative pb-10">
                     <!-- Images -->
                     <div class="carousel-item">
+                        <a href="/konsers?search=tiara">
                         <img class="max-w-full rounded-lg p-6" src="{{ asset('storage/talent-posters/tiara.png') }}"
                             alt="Tiara">
+                        </a>
                     </div>
                     <div class="carousel-item">
+                        <a href="/konsers?search=nadin amizah">
                         <img class="max-w-full rounded-lg p-6" src="{{ asset('storage/talent-posters/nadin.png') }}"
                             alt="Nadin">
+                        </a>
                     </div>
                     <div class="carousel-item">
+                        <a href="/konsers?search=ardhito pramono">
                         <img class="max-w-full rounded-lg p-6" src="{{ asset('storage/talent-posters/ardhito.png') }}"
                             alt="Ardhito">
+                        </a>
                     </div>
                     <div class="carousel-item">
+                        <a href="/konsers?search=tulus">
                         <img class="max-w-full rounded-lg p-6" src="{{ asset('storage/talent-posters/tulus.png') }}"
                             alt="Tulus">
+                        </a>
                     </div>
                     <div class="carousel-item">
+                        <a href="/konsers?search=mahalini">
                         <img class="max-w-full rounded-lg p-6" src="{{ asset('storage/talent-posters/mahalini.png') }}"
                             alt="Mahalini">
+                        </a>
                     </div>
     
                 </div>

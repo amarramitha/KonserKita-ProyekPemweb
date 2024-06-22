@@ -39,8 +39,8 @@
             </div>
         @endif
 
-        <div>
-        <img class="h-auto max-w-lg transition-all duration-300 rounded-lg blur-sm hover:blur-none" src="{{ asset('storage/' . $ticket->konser->image) }}" alt="image description">
+        <div class="mt-5">
+        <img class="h-auto max-w-lg transition-all duration-300 rounded-lg" src="{{ asset('storage/' . $ticket->konser->image) }}" alt="image description">
         </div>
         <form class="space-y-6" action="/checkout" method="POST">
             @csrf
