@@ -59,13 +59,17 @@
                                 <button type="button" class="focus:outline-none text-white font-semibold bg-green-700 focus:ring-4 focus:ring-green-300 rounded-lg text-sm px-2.5 py-0.5">Success</button>
                                 @endif
                             </td>
-                            <td class="px-6 py-4 inline-flex">
+                            <td class="px-6 py-4">
+                                @if ($p->status != 'success')
                                 <a href="/checkout/{{ $p->id }}" class=" focus:outline-none bg-blue-100 text-blue-800 hover:bg-blue-800 hover:text-white text-xs font-semibold me-2 px-2.5 py-0.5 rounded inline-flex items-center justify-center">
                                     bayar sekarang  
                                 </a>
-                                <a href="/tiket/{{ $p->id }}" class=" focus:outline-none bg-blue-100 text-green-800 hover:bg-green-800 hover:text-white text-xs font-semibold me-2 px-2.5 py-0.5 rounded inline-flex items-center justify-center">
+                                @endif
+                                @if ($p->status == 'success')
+                                <a href="/tiket/{{ $p->id }}" class=" focus:outline-none bg-blue-100 text-blue-800 hover:bg-blue-800 hover:text-white text-xs font-semibold me-2 px-2.5 py-0.5 rounded inline-flex items-center justify-center">
                                     Download Tiket  
                                 </a>
+                                @endif
                             </td>
                         </tr>
                         @endforeach

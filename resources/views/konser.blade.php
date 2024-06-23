@@ -72,14 +72,14 @@
             </button>
         </div>
     
-        <div id="deskripsi" class="hidden w-auto mx-10 p-6 mb-20 bg-brand-desk rounded-lg shadow md:w-1/2 ">
+        <div id="deskripsi" class="hidden w-auto mx-10 p-6 bg-brand-desk text-white rounded-lg shadow text-justify">
             <div id="trix-content">{!! $konser['deskripsi'] !!}</div>
         </div>
     
         <div id="tiket" class="hidden">
             @if (!empty($konser->ticket))
                 @foreach ($konser->ticket as $t)
-                    <div class="mx-10 p-6 mb-10 bg-brand-desk rounded-xl shadow md:w-2/3">
+                    <div class="mx-10 p-6 mt-5 bg-brand-desk border rounded-xl shadow">
                         <div class="flex justify-between items-center mb-2">
                             <h5 class="text-2xl font-bold text-white dark:text-white">{{ $t->title }}</h5>
                             <button class="px-4 py-2 font-bold bg-white text-brand-blue rounded-xl">{{ $t->status }}</button>
@@ -99,7 +99,7 @@
             @endif
         </div>
     
-        <div id="talent" class="hidden grid-cols-10 gap-5 p-4  ">
+        <div id="talent" class="hidden grid-cols-5 gap-5 p-4  ">
             @foreach ($konser->talent as $item)
             <div class="flex flex-col items-center p-2 bg-brand-desk border-gray-200 rounded-xl shadow dark:border-gray-700 dark:bg-gray-800">
                 <img class="object-cover w-fit rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
@@ -111,7 +111,7 @@
             @endforeach
         </div>
     
-        <div id="sk" class="hidden w-auto mx-10 p-6 mb-20 bg-brand-desk rounded-lg shadow md:w-1/2 ">
+        <div id="sk" class="hidden w-auto mx-10 p-6 bg-brand-desk text-white text-justify rounded-lg shadow">
             @foreach ($konser->syaratketentuan as $item)
             <ul>
             <li><div id="trix-content">{!! $item['syaratketentuan'] !!}</div></li>

@@ -1,8 +1,8 @@
 @extends('layouts.main')
 
 @section('content')
-    <div class="mt-16 bg-brand-desk">
-        <div id="alert" class="flex p-4 mt-32 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" role="alert">
+    <div class="mt-14 bg-brand-desk">
+        <div id="alert" class="flex p-4 mt-16 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" role="alert">
             <svg class="flex-shrink-0 inline w-4 h-4 me-3 mt-[2px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
               <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
             </svg>
@@ -20,7 +20,7 @@
                 </svg>
               </button>
         </div>
-        <div class=" w-full max-w-screen-sm mx-auto items-center p-4 my-20 bg-brand-desk border border-brand-desk rounded-lg shadow sm:p-6 md:p-8">
+        <div class=" w-full max-w-screen-sm mx-auto items-center p-4 mt-20 bg-brand-desk border border-brand-desk rounded-lg shadow sm:p-6 md:p-8">
             <div class="space-y-6" action="#">
                 <div class="flex space-x-2 items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -72,7 +72,7 @@
 @endsection
 
 @section('midtrans')
-<script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ env('MIDTRANS_CLIENT_KEY') }}"></script>
+<script src="https://app.midtrans.com/snap/snap.js" data-client-key="{{ env('MIDTRANS_CLIENT_KEY') }}"></script>
 <script type="text/javascript">
     document.getElementById('pay-button').onclick = function(){
       // SnapToken acquired from previous step

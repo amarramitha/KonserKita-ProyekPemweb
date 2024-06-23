@@ -10,6 +10,29 @@ use Illuminate\Http\Request;
 
 class KonserController extends Controller
 {
+
+    public function index()
+    {
+         // Start the query
+        $query = Konser::with(['ticket','talent'])->latest();
+
+        // Apply search filter if there's a search query
+        if(request('search')){
+            $query->where('title', 'like', '%' . request('search') . '%')
+            // Uncomment and adjust the following lines as necessary
+            ->orWhere('lokasi', 'like', '%' . request('search') . '%')
+            ->orWhereHas('talent', function($q) {
+                $q->where('name', 'like', '%' . request('search'). '%');
+            });
+        }
+        
+        // Execute the query and get the results
+        $konsers = $query->get();
+        
+        return view('konsers', [
+            'konsers' => $konsers,
+        ]);
+    }
     public function show($slug)
     {
         // Mengambil konser berdasarkan slug dan tiket yang terkait
@@ -65,11 +88,11 @@ class KonserController extends Controller
         // Set your Merchant Server Key
         \Midtrans\Config::$serverKey = config('midtrans.serveykey');
         // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
-        \Midtrans\Config::$isProduction = false;
+        \Midtrans\Config::$isProduction = config('midtrans.isProduction');
         // Set sanitization on (default)
-        \Midtrans\Config::$isSanitized = true;
+        \Midtrans\Config::$isSanitized = config('midtrans.isSanitized');
         // Set 3DS transaction for credit card to true
-        \Midtrans\Config::$is3ds = true;
+        \Midtrans\Config::$is3ds = config('midtrans.is3ds');
 
         $params = array(
             'transaction_details' => array(
