@@ -25,7 +25,7 @@
                         </button>
                     </div>
                     <!-- Modal body -->
-                    <form class="p-4 md:p-5" action="./" method="post">
+                    <form class="p-4 md:p-5" action="/admin/dashboard/konsers/{{ $konser['slug'] }}/tickets/{{ $ticket->id }}" method="post">
                       @csrf
                       @method('PUT')
                         <div class="grid gap-4 mb-4 grid-cols-2">

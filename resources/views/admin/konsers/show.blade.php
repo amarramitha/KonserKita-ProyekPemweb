@@ -94,7 +94,7 @@
             <div class="flex justify-between">
                 <h2 class="py-4 px-4 font-bold">Tiket {{ $konser['title'] }}</h2>
                 <div class="px-1 py-1 flex justify-end">
-                    <a href="{{ $konser['slug'] }}/tickets/create" class="inline-flex px-1 py-1 pr-4">
+                    <a href="/admin/dashboard/konsers/{{ $konser['slug'] }}/tickets/create" class="inline-flex px-1 py-1 pr-4">
                         <svg class="w-6 h-6 bg-blue-500 text-white rounded-md" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7 7V5"/>
                         </svg></a>
@@ -288,9 +288,6 @@
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
                     <th scope="col" class="px-6 py-2">
-                        No
-                    </th>
-                    <th scope="col" class="px-6 py-2">
                         Syarat Ketentuan
                     </th>
                     <th scope="col" class="px-6 py-2 text-right">
@@ -301,9 +298,6 @@
             <tbody>
                 @foreach ( $konser->syaratketentuan as $t )
                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                    <th scope="row" class="px-6 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        {{ $loop->iteration }}.
-                    </th>
                     <td class="px-6 py-2 text-justify">
                         <div id="trix-content">{!! $t['syaratketentuan'] !!}</div>
                     </td>

@@ -58,7 +58,7 @@ class TicketController extends Controller
     {
         return view('admin.tikets.edit', [
             'ticket' => $ticket,
-            'tickets' => $konser,
+            'konser' => $konser,
         ]);
     }
 
@@ -80,6 +80,9 @@ class TicketController extends Controller
         if($validatedData['kuota'] == 0)
         {
             Ticket::where('id', $ticket->id)->update(['status' => 'Sold Out']);
+        } elseif($validatedData['kuota'] > 0)
+        {
+            Ticket::where('id', $ticket->id)->update(['status' => 'On Sale']);
         }
 
         return redirect('/admin/dashboard/konsers')->with('success', 'Tiket telah diperbarui!');
@@ -91,6 +94,6 @@ class TicketController extends Controller
     public function destroy(Konser $konser,Ticket $ticket)
     {
         Ticket::destroy($ticket->id);
-        return redirect('/admin/dashboard/konsers')->with('success', 'Konser berhasil dihapus!');
+        return redirect('/admin/dashboard/konsers')->with('success', 'Tiket berhasil dihapus!');
     }
 }

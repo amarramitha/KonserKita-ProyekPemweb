@@ -97,7 +97,7 @@ class KonserController extends Controller
         $params = array(
             'transaction_details' => array(
                 'order_id' => rand(),
-                'gross_amount' => ($request->price+5000),
+                'gross_amount' => ($request->price),
             ),
             'customer_details' => array(
                 'name' => $request->name,

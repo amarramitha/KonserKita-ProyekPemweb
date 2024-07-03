@@ -34,16 +34,16 @@
             </div>
         </section>
         <!--carousel-->
-        <div class="block w-full px-5 py-5 p-10 bg-brand-blue shadow">
+        <div class="block w-full px-5 py-5 p-5 bg-brand-blue shadow">
             <h5 class="mx-10 mt-5 mb-2 text-2xl font-bold tracking-tight text-white italic">Paling Baru!</h5>
             <p class="mx-10 font-normal text-white mb-8 text-base">Kumpulan konser terbaru di
                 Konserkita yang mungkin kamu sukai.</p>
-            <div class="flex justify-end mr-5">
+            <div class="flex justify-end mr-5 mb-5">
                 <a href="/konsers" class="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">
                     Selengkapnya
                 </a>
             </div>
-            <div id="default-carousel" class="relative w-full h-full max-w-screen-xl max-h-svh" data-carousel="slide">
+            <div id="default-carousel" class="relative w-full h-3/4 max-w-screen-xl max-h-svh" data-carousel="slide">
                 <!-- Carousel wrapper -->
                 <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
                     <!-- Item 1 -->
@@ -58,7 +58,7 @@
                     @endforeach
                 </div>
                 <!-- Slider indicators -->
-                <div class="absolute z-30 flex -translate-x-1/2 bottom-3 left-1/2 space-x-3 rtl:space-x-reverse">
+                <div class="absolute z-30 flex mx-auto -translate-x-1/2 bottom-3 left-1/2 space-x-3 rtl:space-x-reverse">
                     @foreach ($konsers as $k)
                     <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"
                         data-carousel-slide-to="0"></button>
@@ -66,7 +66,7 @@
                 </div>
                 <!-- Slider controls -->
                 <button type="button"
-                    class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                    class="absolute ml-5 top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
                     data-carousel-prev>
                     <span
                         class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
@@ -99,20 +99,20 @@
         <div class="relative w-full h-full bg-gray-900 border border-brand-blue shadow">
             <img src="{{ asset('storage/images/2.jpg') }}"
                 class="absolute inset-0 w-full h-full object-cover mix-blend-overlay brightness-50" alt="Background Image">
-            <div class="relative p-2">
+            <div class="relative p-2 mx-auto">
                 <h5 class="text-2xl font-bold text-center tracking-tight text-white">Sebentar Lagi!
                 </h5>
-                <div class="grid grid-cols-3 gap-4">
+                <div class="grid grid-cols-3 gap-4 ml-10">
                     <div>
-                        <img class="max-w-full rounded-lg p-6" src="{{ asset('storage/poster-images/poster1.png') }}"
+                        <img class="flex max-w-full rounded-lg justify-center p-6" src="{{ asset('storage/poster-images/poster1.png') }}"
                             alt="">
                     </div>
                     <div>
-                        <img class="max-w-full rounded-lg p-6" src="{{ asset('storage/poster-images/poster2.png') }}"
+                        <img class="flex max-w-full rounded-lg justify-center p-6" src="{{ asset('storage/poster-images/poster2.png') }}"
                             alt="">
                     </div>
                     <div>
-                        <img class="max-w-full rounded-lg p-6" src="{{ asset('storage/poster-images/poster3.png') }}"
+                        <img class="flex max-w-full rounded-lg justify-center p-6 pr-6" src="{{ asset('storage/poster-images/poster3.png') }}"
                             alt="">
                     </div>
                 </div>

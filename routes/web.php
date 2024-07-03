@@ -60,10 +60,10 @@ Route::get('/admin/dashboard/konsers/checkSlug', [AdminKonserController::class, 
 Route::resource('/admin/dashboard/users', UserController::class)->middleware('admin');
 Route::resource('/admin/dashboard/purchases', AdminPurchaseController::class)->middleware('admin');
 Route::resource('/admin/dashboard/konsers', AdminKonserController::class)->middleware('admin');
-Route::prefix('admin/dashboard/konsers')->middleware('admin')->group(function () {
-    Route::resource('{konser:slug}/tickets', TicketController::class);
-    Route::resource('{konser:slug}/talents', TalentController::class);
-    Route::resource('{konser:slug}/syaratketentuans', SyaratKetentuanController::class);
+Route::prefix('admin/dashboard/konsers/{konser:slug}')->middleware('admin')->group(function () {
+    Route::resource('/tickets', TicketController::class);
+    Route::resource('/talents', TalentController::class);
+    Route::resource('/syaratketentuans', SyaratKetentuanController::class);
 })->middleware('admin');
 
 Route::get('/konsers', [KonserController::class, 'index'])->middleware('auth');

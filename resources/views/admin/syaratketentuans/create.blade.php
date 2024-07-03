@@ -18,7 +18,7 @@
                 </h3>
             </div>
             <!-- Modal body -->
-            <form class="p-4" action="./" method="post">
+            <form class="p-4" action="/admin/dashboard/konsers/{{ $konser['slug'] }}/syaratketentuans" method="post">
               @csrf
                 <div class="mb-4">
                     <div class="mb-2">

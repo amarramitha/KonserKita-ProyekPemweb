@@ -37,10 +37,14 @@
                         @endif
                     </ul>
                     <hr>
-                    <div class="mt-4 flex items-center justify-between gap-4">
-                        <p class=" text-gray-400">Start From</p>
-                        <p class="text-2xl font-extrabold leading-tight text-yellow-400 dark:text-white">{{ Number::format($k->ticket->min('price'), locale: 'de') }}</p>  
-                    </div>
+                    @if ($k->ticket->count() == 0)
+                      <p class="mt-2 text-2xl font-extrabold leading-tight text-yellow-400">Tiket Belum Tersedia</p>
+                    @else  
+                      <div class="mt-4 flex items-center justify-between gap-4">
+                          <p class=" text-gray-400">Start From</p>
+                          <p class="text-2xl font-extrabold leading-tight text-yellow-400 dark:text-white">{{ Number::format($k->ticket->min('price'), locale: 'de') }}</p>  
+                      </div>
+                    @endif
                   </div>
                 </div>
                 @endforeach

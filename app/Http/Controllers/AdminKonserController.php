@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Konser;
 use App\Models\Ticket;
 use Illuminate\Http\Request;
@@ -50,6 +51,9 @@ class AdminKonserController extends Controller
             $validatedData['image'] = $request->file('image')->store('konser-images');
         }
 
+        $validatedData['date_start'] = Carbon::createFromFormat('d/m/Y', $request->date_start)->format('Y-m-d');
+        $validatedData['date_end'] = Carbon::createFromFormat('d/m/Y', $request->date_end)->format('Y-m-d');
+
         Konser::create($validatedData);
 
         return redirect('/admin/dashboard/konsers')->with('success', 'Konser baru telah ditambahkan!');
@@ -60,6 +64,9 @@ class AdminKonserController extends Controller
      */
     public function show(Konser $konser)
     {
+        // dd($konser);
+        // $validatedData['date_start'] = Carbon::createFromFormat('d/m/Y', $request->date_start)->format('Y-m-d');
+        // $validatedData['date_end'] = Carbon::createFromFormat('d/m/Y', $request->date_end)->format('Y-m-d');
         return view('admin.konsers.show',[
             'konser' => $konser,
         ]);
@@ -70,6 +77,8 @@ class AdminKonserController extends Controller
      */
     public function edit(Konser $konser)
     {
+        $konser->date_start = Carbon::createFromFormat('Y-m-d', $konser->date_start)->format('d-m-Y');
+        $konser->date_end = Carbon::createFromFormat('Y-m-d', $konser->date_end)->format('d-m-Y');
         return view('admin.konsers.edit', [
             'konser' => $konser,
             'konsers' => Konser::all(),
@@ -102,6 +111,9 @@ class AdminKonserController extends Controller
             }
             $validatedData['image'] = $request->file('image')->store('konser-images');   
         }
+
+        $validatedData['date_start'] = Carbon::createFromFormat('d/m/Y', $request->date_start)->format('Y-m-d');
+        $validatedData['date_end'] = Carbon::createFromFormat('d/m/Y', $request->date_end)->format('Y-m-d');
 
         Konser::where('id', $konser->id)->update($validatedData);
 
